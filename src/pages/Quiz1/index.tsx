@@ -13,7 +13,11 @@ const Quiz1: React.FC = () => {
   const [isCompleted, setIsCompleted] = useState(false);
 
   // Hook SCORM para comunicação com LMS
-  const { completeLesson } = useScorm();
+  const scormHook = useScorm();
+  const { completeLesson } = scormHook;
+
+  console.log("useScorm retornou:", scormHook);
+  console.log("completeLesson:", completeLesson);
 
   // Função para calcular pontuação
   const calculateScore = () => {
@@ -23,13 +27,20 @@ const Quiz1: React.FC = () => {
         correct++;
       }
     });
-    return Math.round((correct / QUIZ1_DATA.questions.length) * 100);
+    const percentage = Math.round(
+      (correct / QUIZ1_DATA.questions.length) * 100
+    );
+    return { correct, total: QUIZ1_DATA.questions.length, percentage };
   };
 
-  // Se o quiz foi concluído, mostrar resultado
+  // Debug log
+  console.log("Estado isCompleted:", isCompleted);
+
+  // Se o quiz foi concluído, mostrar tela provisória
   if (isCompleted) {
-    const finalScore = calculateScore();
-    const passed = finalScore >= 70;
+    console.log("Renderizando tela de resultado");
+    const scoreData = calculateScore();
+    const passed = scoreData.percentage >= 70;
 
     return (
       <div>
@@ -41,26 +52,46 @@ const Quiz1: React.FC = () => {
               alt="Quiz Background"
             />
             <div className="text-container">
-              <h3 className="title">Quiz Concluído!</h3>
-              <div className="score-result">
-                <p className="score-text">Sua pontuação: {finalScore}%</p>
-                <p className="result-text">
-                  {passed
-                    ? "🎉 Parabéns! Você foi aprovado!"
-                    : "😔 Você não atingiu a pontuação mínima (70%)"}
-                </p>
-                {!passed && (
-                  <button
-                    className="quiz-button retry"
-                    onClick={() => {
-                      setCurrentQuestionIndex(0);
-                      setSelectedAnswers({});
-                      setIsCompleted(false);
-                    }}
-                  >
-                    <p className="button-text">TENTAR NOVAMENTE</p>
-                  </button>
-                )}
+              <div className="provisional-screen">
+                <h2 className="provisional-title">
+                  🚧 TELA PROVISÓRIA DE TESTE 🚧
+                </h2>
+                <div className="score-display">
+                  <h3 className="score-title">Resultado do Quiz</h3>
+                  <div className="score-info">
+                    <p className="score-text">
+                      Sua pontuação:{" "}
+                      <strong>
+                        {scoreData.correct}/{scoreData.total} acertos
+                      </strong>
+                    </p>
+                    <p className="score-percentage">
+                      ({scoreData.percentage}%)
+                    </p>
+                    <p className="status-text">
+                      Status: {passed ? "✅ APROVADO" : "⚠️ NECESSITA MELHORIA"}
+                    </p>
+                  </div>
+                </div>
+                <div className="test-info">
+                  <p className="test-note">
+                    Esta é uma tela provisória para checkpoint de
+                    desenvolvimento.
+                  </p>
+                  <p className="test-note">
+                    Score registrado no sistema SCORM: {scoreData.percentage}%
+                  </p>
+                </div>
+                <button
+                  className="quiz-button retry"
+                  onClick={() => {
+                    setCurrentQuestionIndex(0);
+                    setSelectedAnswers({});
+                    setIsCompleted(false);
+                  }}
+                >
+                  <p className="button-text">REFAZER QUIZ</p>
+                </button>
               </div>
             </div>
           </QuizBackground>
@@ -80,22 +111,40 @@ const Quiz1: React.FC = () => {
   };
 
   const handleNext = () => {
+    console.log(
+      "handleNext chamado - currentQuestionIndex:",
+      currentQuestionIndex
+    );
+    console.log("Total de questões:", QUIZ1_DATA.questions.length);
+
     if (currentQuestionIndex < QUIZ1_DATA.questions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
     } else {
+      console.log("Finalizando quiz...");
+
       // Quiz finalizado - calcular pontuação e enviar para SCORM
-      const finalScore = calculateScore();
-      const passed = finalScore >= 70; // Critério de aprovação: 70%
+      const scoreData = calculateScore();
+      const passed = scoreData.percentage >= 70; // Critério de aprovação: 70%
 
-      // Reportar para SCORM/LMS
-      completeLesson(finalScore, passed);
+      console.log("Score calculado:", scoreData);
+      console.log("Aprovado:", passed);
 
+      // Reportar para SCORM/LMS (com verificação segura)
+      if (completeLesson && typeof completeLesson === "function") {
+        completeLesson(scoreData.percentage, passed);
+      } else {
+        console.warn(
+          "completeLesson não está disponível - funcionando em modo desenvolvimento"
+        );
+      }
+
+      console.log("Definindo isCompleted como true");
       setIsCompleted(true);
 
       console.log(
-        `Quiz finalizado! Pontuação: ${finalScore}% - ${
-          passed ? "APROVADO" : "REPROVADO"
-        }`
+        `Quiz finalizado! Pontuação: ${scoreData.correct}/${scoreData.total} (${
+          scoreData.percentage
+        }%) - ${passed ? "APROVADO" : "NECESSITA MELHORIA"}`
       );
     }
   };

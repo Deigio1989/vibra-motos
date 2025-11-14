@@ -6,6 +6,9 @@ export const QuizContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  .provisional-screen {
+    color: var(--secondary-color);
+  }
 `;
 
 export const QuizBackground = styled.div`
@@ -33,7 +36,7 @@ export const QuizBackground = styled.div`
     border-radius: 40px;
     position: absolute;
     width: 100%;
-    min-width: 570px;
+    min-width: 600px;
     height: auto;
     z-index: -1;
   }
@@ -83,7 +86,7 @@ export const QuizBackground = styled.div`
         font-family: var(--font-family);
         border: 1px solid transparent;
         border-radius: 50px;
-        padding: 8px 12px 6px;
+        padding: 4px 12px 2px;
         margin: 2px 0;
         cursor: pointer;
         transition: all 0.3s ease;
