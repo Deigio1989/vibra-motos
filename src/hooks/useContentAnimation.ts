@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 // Hook para controlar animações de conteúdo
 export const useContentAnimation = (activeId: number | null) => {
@@ -7,7 +7,7 @@ export const useContentAnimation = (activeId: number | null) => {
   useEffect(() => {
     if (activeId !== null) {
       // Incrementa a key para forçar re-animação
-      setAnimationKey(prev => prev + 1);
+      setAnimationKey((prev) => prev + 1);
     }
   }, [activeId]);
 
@@ -17,18 +17,18 @@ export const useContentAnimation = (activeId: number | null) => {
 // Opções de animação personalizáveis
 export const animationPresets = {
   fadeDown: {
-    duration: '0.6s',
-    easing: 'ease-out',
-    delay: '0s'
+    duration: "0.6s",
+    easing: "ease-out",
+    delay: "0s",
   },
   fadeUp: {
-    duration: '0.6s', 
-    easing: 'ease-out',
-    delay: '0s'
+    duration: "0.6s",
+    easing: "ease-out",
+    delay: "0s",
   },
   slideIn: {
-    duration: '0.8s',
-    easing: 'ease-out', 
-    delay: '0.1s'
-  }
+    duration: "0.8s",
+    easing: "ease-out",
+    delay: "0.1s",
+  },
 };

@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import React, { ReactNode } from "react";
+import styled, { keyframes, css } from "styled-components";
 
 // Animações disponíveis
 const fadeDown = keyframes`
@@ -63,12 +63,12 @@ interface ContentAnimationProps {
   delay?: string;
 }
 
-const ContentAnimation: React.FC<ContentAnimationProps> = ({ 
+const ContentAnimation: React.FC<ContentAnimationProps> = ({
   children,
-  animation = 'fadeDown',
-  duration = '0.6s',
-  easing = 'ease-out',
-  delay = '0s'
+  animation = "fadeDown",
+  duration = "0.6s",
+  easing = "ease-out",
+  delay = "0s",
 }) => {
   return (
     <AnimatedContainer

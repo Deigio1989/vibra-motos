@@ -36,19 +36,19 @@ export const Title = styled.div`
     flex-direction: column;
     gap: 8px;
 
-    .secondary-title {
-      font-size: 64px;
-      font-weight: 700;
-      line-height: 0.7;
-      color: var(--secondary-color);
-      margin: 0;
-    }
-
-    .primary-title {
-      font-size: 80px;
+    h2 {
+      font-size: 40px;
       font-weight: 700;
       line-height: 0.7;
       color: var(--primary-color);
+      margin: 0;
+    }
+
+    span {
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 0.7;
+      color: var(--secondary-color);
       margin: 0;
     }
   }
@@ -63,7 +63,6 @@ export const Paragraphs = styled.div`
     font-size: 16px;
     line-height: 1.6;
     color: var(--primary-color);
-    text-align: justify;
     margin: 0;
   }
 `;

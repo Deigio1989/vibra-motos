@@ -1,14 +1,10 @@
 import React from "react";
 import { AnchorsWrapper } from "./styles";
 import Anchor from "../Anchor";
-
-interface AnchorConfig {
-  iconSrc: string;
-  isOpen?: boolean;
-}
+import { AnchorData } from "../../types/anchor";
 
 interface AnchorsContainerProps {
-  anchors: AnchorConfig[];
+  anchors: AnchorData[];
   startX?: number;
   startY?: number;
   spacing?: number;
@@ -36,6 +32,8 @@ const AnchorsContainer: React.FC<AnchorsContainerProps> = ({
           spacing={spacing}
           yOffset={yOffset}
           contentId={index + 1} // ID do content (1, 2, 3, 4, etc.)
+          number={anchor.number}
+          title={anchor.title}
         />
       ))}
     </AnchorsWrapper>

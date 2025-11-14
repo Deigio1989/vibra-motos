@@ -1,13 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import tarjaCabeçalho from "../../assets/tarja-cabeçalho.png";
 import logoVibra from "../../assets/logo-vibra.png";
 import marcaFundo from "../../assets/marca-fundo.png";
 import motoDobra from "../../assets/moto-dobra.png";
 import semaforo from "../../assets/semaforo.png";
 import PitstopTitle from "../../components/PitstopTitle";
-import avancar from "../../assets/avancar.png";
-
 import {
   ModuleMain,
   ModuleContainer,
@@ -17,12 +14,6 @@ import {
 } from "./styles";
 
 const Modulo1 = () => {
-  const navigate = useNavigate();
-
-  const handleNext = () => {
-    navigate("/parada1");
-  };
-
   return (
     <ModuleMain>
       <img className="tarja" src={tarjaCabeçalho} alt="" />
@@ -56,13 +47,6 @@ const Modulo1 = () => {
             allowFullScreen
           ></iframe>
         </div>
-        <img
-          className="next-button"
-          src={avancar}
-          alt="Avançar"
-          onClick={handleNext}
-          style={{ cursor: "pointer" }}
-        />
       </VideoSection>
     </ModuleMain>
   );

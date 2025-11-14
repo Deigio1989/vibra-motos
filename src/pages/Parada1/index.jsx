@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ParadaContainer } from "./styles";
 import PitstopTitle from "../../components/PitstopTitle";
 import ParadaContent1_1 from "../../components/ParadaContent1-1";
@@ -9,6 +10,9 @@ import ParadaContent1_5 from "../../components/ParadaContent1-5";
 import ParadaContent1_6 from "../../components/ParadaContent1-6";
 import ParadaContent1_7 from "../../components/ParadaContent1-7";
 import placa from "../../assets/placa.png";
+import avancar from "../../assets/avancar.png";
+import back from "../../assets/back.png";
+
 import Roadmap from "../../components/Roadmap";
 import { NavigationProvider, useNavigation } from "../../store/navigationStore";
 import ContentAnimation from "../../components/ContentAnimation";
@@ -41,14 +45,59 @@ const ParadaContent = () => {
     })();
 
     // Envolve o content com animação, usando activeContentId como key para forçar re-animação
-    return (
-      <ContentAnimation key={activeContentId}>
-        {content}
-      </ContentAnimation>
-    );
+    return <ContentAnimation key={activeContentId}>{content}</ContentAnimation>;
   };
 
   return renderActiveContent();
+};
+
+// Componente interno que usa navigation e navigate
+const ParadaNavigation = () => {
+  const { activeContentId, setActiveContent } = useNavigation();
+  const navigate = useNavigate();
+
+  const totalContents = 7; // Total de conteúdos da Parada1
+
+  const handleNext = () => {
+    if (activeContentId < totalContents) {
+      setActiveContent(activeContentId + 1);
+    } else {
+      // Se está no último conteúdo, navega para Quiz1
+      navigate("/quiz1");
+    }
+  };
+
+  const handleBack = () => {
+    if (activeContentId > 1) {
+      setActiveContent(activeContentId - 1);
+    }
+  };
+
+  const isFirstContent = activeContentId === 1;
+  const isLastContent = activeContentId === totalContents;
+
+  return (
+    <div className="navigation">
+      <img
+        className="back-button"
+        src={back}
+        alt="Voltar"
+        onClick={handleBack}
+        style={{
+          opacity: isFirstContent ? 0 : 1,
+          cursor: isFirstContent ? "not-allowed" : "pointer",
+          pointerEvents: isFirstContent ? "none" : "auto",
+        }}
+      />
+      <img
+        className="next-button"
+        src={avancar}
+        alt={isLastContent ? "Ir para Quiz" : "Avançar"}
+        onClick={handleNext}
+        style={{ cursor: "pointer" }}
+      />
+    </div>
+  );
 };
 
 const Parada1 = () => {
@@ -64,6 +113,9 @@ const Parada1 = () => {
 
         {/* Renderiza apenas o content ativo */}
         <ParadaContent />
+
+        {/* Navegação com funcionalidade */}
+        <ParadaNavigation />
       </ParadaContainer>
     </NavigationProvider>
   );

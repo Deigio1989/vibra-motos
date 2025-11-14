@@ -152,11 +152,28 @@
   font-display: swap;
 }
 
-/* Acumin Pro Condensed - Família Condensada */
+/* Acumin Pro Condensed - Família Condensada (Condensed - meio termo) */
+/* Light - 300 */
+@font-face {
+  font-family: "Acumin Pro Condensed";
+  src: url("/fonts/acumin-pro-condensed-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Acumin Pro Condensed";
+  src: url("/fonts/acumin-pro-condensed-light-italic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Regular - 400 */
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed.otf") format("opentype");
+  src: url("/fonts/acumin-pro-condensed-medium.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -209,6 +226,12 @@
   --secondary-color: #56aa43;
   --background-color: #004415;
   --secondary-background: #115727;
+
+  /* Cores dos componentes */
+  --accent-green-primary: #137b1a;
+  --accent-green-secondary: #a2c63c;
+  --disabled-color: #838181ff;
+
   --font-family: "Acumin Pro Condensed", system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   --font-family-regular: "Acumin Pro", system-ui, Avenir, Helvetica, Arial,

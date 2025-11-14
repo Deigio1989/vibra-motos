@@ -60,29 +60,18 @@ export const BackgroundImages = styled.div`
 `;
 
 export const VideoSection = styled.section`
-  padding: 4rem 20% 6rem;
+  padding: 4rem 0 6rem;
   background-color: var(--secondary-background);
   display: flex;
-
   justify-content: center;
-  flex-direction: column;
-
-  align-items: center;
 
   .video-container {
-    width: 100%;
+    width: 60%;
     padding: 1rem;
     background: linear-gradient(to right, #7d7676ff, #3f3b3bff, #686767ff);
     border-radius: 16px;
     border: #808080 solid 2px;
     box-shadow: 4px 10px 12px rgba(0, 0, 0, 0.5);
-  }
-
-  .next-button {
-    margin-top: 2rem;
-    align-self: flex-end;
-    width: 10rem;
-    cursor: pointer;
   }
 
   iframe {

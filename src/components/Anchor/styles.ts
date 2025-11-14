@@ -23,7 +23,9 @@ export const AnchorWrapper = styled.div<AnchorWrapperProps>`
     transform: translateX(-50%) scaleY(0);
 
     background-color: ${(props) =>
-      props.$variant === "primary" ? "#47ad4d" : "#a2c63c"};
+      props.$variant === "primary"
+        ? "var(--accent-green-primary)"
+        : "var(--accent-green-secondary)"};
 
     /* Secondary precisa ficar posicionada acima para crescer para cima */
     top: ${(props) => (props.$variant === "primary" ? "0" : "-6.5rem")};
@@ -43,9 +45,13 @@ export const AnchorWrapper = styled.div<AnchorWrapperProps>`
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     border: solid
-      ${(props) => (props.$variant === "primary" ? "#47ad4d" : "#a2c63c")} 3.5px;
+      ${(props) =>
+        props.$variant === "primary"
+          ? "var(--accent-green-primary)"
+          : "var(--accent-green-secondary)"}
+      3.5px;
     transform: translateX(-50%) translateY(-50%);
     cursor: pointer;
     transition: all 0.5s ease;
@@ -60,7 +66,9 @@ export const AnchorWrapper = styled.div<AnchorWrapperProps>`
     transform-origin: center;
     position: absolute;
     background-color: ${(props) =>
-      props.$variant === "primary" ? "#47ad4d" : "#a2c63c"};
+      props.$variant === "primary"
+        ? "var(--accent-green-primary)"
+        : "var(--accent-green-secondary)"};
     transform: translateX(-50%) translateY(-50%);
     width: 16px;
     height: 16px;
@@ -119,8 +127,8 @@ export const AnchorWrapper = styled.div<AnchorWrapperProps>`
     background-color: var(--secondary-background);
     padding: ${(props) =>
       props.$variant === "primary"
-        ? "3.5rem 1rem 1.5rem"
-        : "1.5rem 1rem 3.5rem"};
+        ? "3.5rem 0.7rem 1.5rem"
+        : "1rem 0.7rem 3.5rem"};
     border-radius: 16px;
 
     /* Estado inicial - invisível e levemente deslocado */
@@ -128,10 +136,11 @@ export const AnchorWrapper = styled.div<AnchorWrapperProps>`
     opacity: 0;
     /* Transição rápida para saída (sem delay) */
     transition: all 0.2s ease;
-
+    width: 6.5rem;
     &.open {
       opacity: 1;
       transform: translateX(-50%) translateY(0);
+
       /* Transição mais lenta com delay para entrada */
       transition: all 0.4s ease 0.3s;
     }
@@ -139,8 +148,8 @@ export const AnchorWrapper = styled.div<AnchorWrapperProps>`
     .number {
       color: var(--secondary-color);
       font-size: 4rem;
-      line-height: 1;
-      margin-bottom: 0;
+      line-height: 0.8;
+      margin: 5px 0;
     }
     .title {
       font-size: 1rem;

@@ -67,7 +67,6 @@ export const Paragraphs = styled.div`
     font-size: 16px;
     line-height: 1.6;
     color: var(--primary-color);
-    text-align: justify;
     margin: 0;
 
     .paragraph-title {

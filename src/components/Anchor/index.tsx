@@ -12,6 +12,8 @@ interface AnchorProps {
   spacing: number;
   yOffset: number;
   contentId: number; // ID do content que este anchor controla
+  number: number; // Número do anchor (1, 2, 3, etc)
+  title: string; // Título do anchor
 }
 
 const Anchor: React.FC<AnchorProps> = ({
@@ -24,6 +26,8 @@ const Anchor: React.FC<AnchorProps> = ({
   spacing,
   yOffset,
   contentId,
+  number,
+  title,
 }) => {
   const x = startX + position * spacing;
   const y = variant === "primary" ? startY : startY + yOffset;
@@ -73,8 +77,8 @@ const Anchor: React.FC<AnchorProps> = ({
         onClick={handlePointClick}
       ></div>
       <div className={`text-box ${isOpenState ? "open" : ""}`}>
-        <h3 className="number">5</h3>
-        <p className="title"> O país dos motociclistas</p>
+        <h3 className="number">{number}</h3>
+        <p className="title">{title}</p>
       </div>
       <div className={`icon ${isOpenState ? "open" : ""}`}>
         <img src={iconSrc} alt={`icon ${position + 1}`} />
