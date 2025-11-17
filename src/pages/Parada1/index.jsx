@@ -15,6 +15,7 @@ import back from "../../assets/back.png";
 
 import Roadmap from "../../components/Roadmap";
 import { NavigationProvider, useNavigation } from "../../store/navigationStore";
+import { ProgressionProvider } from "../../store/progressionStore";
 import ContentAnimation from "../../components/ContentAnimation";
 
 // Componente interno que usa o navigation
@@ -106,22 +107,24 @@ const ParadaNavigation = () => {
 
 const Parada1 = () => {
   return (
-    <NavigationProvider>
-      <ParadaContainer className="container">
-        <PitstopTitle
-          title="PRIMEIRA PARADA"
-          iconSrc={placa}
-          iconAlt="placa parar"
-        />
-        <Roadmap />
+    <ProgressionProvider>
+      <NavigationProvider>
+        <ParadaContainer className="container">
+          <PitstopTitle
+            title="PRIMEIRA PARADA"
+            iconSrc={placa}
+            iconAlt="placa parar"
+          />
+          <Roadmap />
 
-        {/* Renderiza apenas o content ativo */}
-        <ParadaContent />
+          {/* Renderiza apenas o content ativo */}
+          <ParadaContent />
 
-        {/* Navegação com funcionalidade */}
-        <ParadaNavigation />
-      </ParadaContainer>
-    </NavigationProvider>
+          {/* Navegação com funcionalidade */}
+          <ParadaNavigation />
+        </ParadaContainer>
+      </NavigationProvider>
+    </ProgressionProvider>
   );
 };
 

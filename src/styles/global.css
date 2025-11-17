@@ -232,6 +232,26 @@
   --accent-green-secondary: #a2c63c;
   --disabled-color: #838181ff;
 
+  /* Cores acinzentadas dos componentes verdes para anchors anteriores */
+  --accent-green-primary-grayed: #7a9c7d;
+  --accent-green-secondary-grayed: #9fb482;
+
+  /* Cores bloqueadas dos componentes verdes para anchors bloqueados */
+  --accent-green-primary-blocked: #555555;
+  --accent-green-secondary-blocked: #666666;
+
+  /* Cores acinzentadas para anchors anteriores */
+  --primary-color-grayed: #b8b8b8;
+  --secondary-color-grayed: #7d9d6b;
+  --background-color-grayed: #4a6450;
+  --secondary-background-grayed: #5a6b5e;
+
+  /* Cores para anchors bloqueados (cinza bem escuro) */
+  --primary-color-blocked: #666666;
+  --secondary-color-blocked: #555555;
+  --background-color-blocked: #333333;
+  --secondary-background-blocked: #444444;
+
   --font-family: "Acumin Pro Condensed", system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   --font-family-regular: "Acumin Pro", system-ui, Avenir, Helvetica, Arial,
