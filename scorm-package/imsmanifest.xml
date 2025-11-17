@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="MANIFEST-01" version="1.0" 
+          xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" 
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  
+  <organizations default="ORG-01">
+    <organization identifier="ORG-01">
+      <title>Vibra Motos SCORM Course</title>
+      <item identifier="ITEM-01" identifierref="RES-01">
+        <title>Vibra Motos Training</title>
+        <adlcp:maxtimeallowed>02:00:00</adlcp:maxtimeallowed>
+        <adlcp:timelimitaction>continue,no message</adlcp:timelimitaction>
+        <adlcp:datafromlms></adlcp:datafromlms>
+        <adlcp:masteryscore>80</adlcp:masteryscore>
+      </item>
+    </organization>
+  </organizations>
+  
+  <resources>
+    <resource identifier="RES-01" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="index.html"/>
+            <file href="assets/avancar.png"/>
+      <file href="assets/back.png"/>
+      <file href="assets/icon-1.png"/>
+      <file href="assets/img-parada-1-3.png"/>
+      <file href="assets/img-parada-1-4.png"/>
+      <file href="assets/img-parada-1-5.png"/>
+      <file href="assets/img-parada-1-6.png"/>
+      <file href="assets/img-parada-1-7-1.png"/>
+      <file href="assets/img-parada-1-7-2.png"/>
+      <file href="assets/img-parada-1-7-3.png"/>
+      <file href="assets/img-parada-1-7-4.png"/>
+      <file href="assets/logo-vibra.png"/>
+      <file href="assets/main.css"/>
+      <file href="assets/main.js"/>
+      <file href="assets/mapa-moto.png"/>
+      <file href="assets/marca-fundo.png"/>
+      <file href="assets/moto-dobra.png"/>
+      <file href="assets/placa.png"/>
+      <file href="assets/quiz-background.png"/>
+      <file href="assets/roadmap.png"/>
+      <file href="assets/semaforo.png"/>
+      <file href="assets/seta.png"/>
+      <file href="assets/tarja-cabeçalho.png"/>
+      <file href="assets/tarja-paradas.png"/>
+    </resource>
+  </resources>
+  
+</manifest>

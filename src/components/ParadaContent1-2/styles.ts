@@ -7,9 +7,13 @@ export const ContentWrapper = styled.div`
   .flex {
     display: flex;
   }
-  .content-image {
-    width: 55%;
-    object-fit: contain;
+
+  .image-column {
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: -10px;
+    flex: 2;
   }
 `;
 
@@ -18,9 +22,11 @@ export const Text = styled.div`
   margin-right: 5rem;
   font-size: 16px;
   font-family: var(--font-family);
+  width: 65%;
 `;
 
 export const Title = styled.div`
+  flex: 3;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -78,7 +84,5 @@ export const Paragraphs = styled.div`
 `;
 
 export const ContentImage = styled.img`
-  /* Estilos para a imagem do conteúdo */
-  max-width: 100%;
-  height: auto;
+  height: 200px;
 `;

@@ -61,6 +61,8 @@ const ParadaNavigation = () => {
   const handleNext = () => {
     if (activeContentId < totalContents) {
       setActiveContent(activeContentId + 1);
+      // Scroll para o topo ao avançar conteúdo
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       // Se está no último conteúdo, navega para Quiz1
       navigate("/quiz1");
@@ -70,6 +72,8 @@ const ParadaNavigation = () => {
   const handleBack = () => {
     if (activeContentId > 1) {
       setActiveContent(activeContentId - 1);
+      // Scroll para o topo ao voltar conteúdo
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 

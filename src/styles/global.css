@@ -2,7 +2,7 @@
 /* Thin - 100 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-thin.otf") format("opentype");
+  src: url("../fonts/acumin-pro-thin.otf") format("opentype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-thin-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-thin-italic.otf") format("opentype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -19,7 +19,7 @@
 /* ExtraLight - 200 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-extralight.otf") format("opentype");
+  src: url("../fonts/acumin-pro-extralight.otf") format("opentype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-extralight-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-extralight-italic.otf") format("opentype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -36,7 +36,7 @@
 /* Light - 300 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-light.otf") format("opentype");
+  src: url("../fonts/acumin-pro-light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -44,7 +44,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-light-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-light-italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -53,7 +53,7 @@
 /* Book/Regular - 400 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-book.otf") format("opentype");
+  src: url("../fonts/acumin-pro-book.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -61,7 +61,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-book-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-book-italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -70,7 +70,7 @@
 /* Medium - 500 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-medium.otf") format("opentype");
+  src: url("../fonts/acumin-pro-medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -78,7 +78,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-medium-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-medium-italic.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -87,7 +87,7 @@
 /* Semibold - 600 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-semibold.otf") format("opentype");
+  src: url("../fonts/acumin-pro-semibold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -95,7 +95,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-semibold-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-semibold-italic.otf") format("opentype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -104,7 +104,7 @@
 /* Bold - 700 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-bold.otf") format("opentype");
+  src: url("../fonts/acumin-pro-bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -112,7 +112,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-bold-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-bold-italic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -121,7 +121,7 @@
 /* Black - 800 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-black.otf") format("opentype");
+  src: url("../fonts/acumin-pro-black.otf") format("opentype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -129,7 +129,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-black-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-black-italic.otf") format("opentype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -138,7 +138,7 @@
 /* UltraBlack - 900 */
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-ultrablack.otf") format("opentype");
+  src: url("../fonts/acumin-pro-ultrablack.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -146,7 +146,7 @@
 
 @font-face {
   font-family: "Acumin Pro";
-  src: url("/fonts/acumin-pro-ultrablack-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-ultrablack-italic.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -156,7 +156,7 @@
 /* Light - 300 */
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed-light.otf") format("opentype");
+  src: url("../fonts/acumin-pro-condensed-light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -164,7 +164,7 @@
 
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed-light-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-condensed-light-italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -173,7 +173,7 @@
 /* Regular - 400 */
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed-medium.otf") format("opentype");
+  src: url("../fonts/acumin-pro-condensed-medium.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -181,7 +181,7 @@
 
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-condensed-italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -190,7 +190,7 @@
 /* Medium - 500 */
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed-medium.otf") format("opentype");
+  src: url("../fonts/acumin-pro-condensed-medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -198,7 +198,7 @@
 
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed-medium-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-condensed-medium-italic.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -207,7 +207,7 @@
 /* Bold - 700 */
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed-bold.otf") format("opentype");
+  src: url("../fonts/acumin-pro-condensed-bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -215,7 +215,7 @@
 
 @font-face {
   font-family: "Acumin Pro Condensed";
-  src: url("/fonts/acumin-pro-condensed-bold-italic.otf") format("opentype");
+  src: url("../fonts/acumin-pro-condensed-bold-italic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
