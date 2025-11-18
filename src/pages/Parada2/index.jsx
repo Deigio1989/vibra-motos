@@ -12,6 +12,7 @@ import ParadaContent2_6 from "../../components/ParadaContent2-6";
 import placa from "../../assets/placa.png";
 import avancar from "../../assets/avancar.png";
 import back from "../../assets/back.png";
+import tarjaListra from "../../assets/tarja-listra.jpg";
 
 import Roadmap from "../../components/Roadmap2";
 import { NavigationProvider, useNavigation } from "../../store/navigationStore";
@@ -119,6 +120,11 @@ const Parada2 = () => {
 
           {/* Navegação com funcionalidade */}
           <ParadaNavigation />
+
+          {/* Tarja listra no final */}
+          <div className="tarja-listra">
+            <img src={tarjaListra} alt="" />
+          </div>
         </ParadaContainer>
       </NavigationProvider>
     </ProgressionProvider>

@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  ContentWrapper,
-  Text,
-  Title,
-  ContentImage,
-  VideoSection,
-} from "./styles";
+import { ContentWrapper, Text, Title, VideoSection } from "./styles";
+import ContentImage from "../ContentImage";
 import paradaImage from "../../assets/img-parada-1-4.png";
 
 interface ParadaContent2_4Props {

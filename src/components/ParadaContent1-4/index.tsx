@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  ContentWrapper,
-  Text,
-  Title,
-  Paragraphs,
-  ContentImage,
-} from "./styles";
+import { ContentWrapper, Text, Title, Paragraphs } from "./styles";
+import ContentImage from "../ContentImage";
 import paradaImage from "../../assets/img-parada-1-4.png";
 
 interface ParadaContent1_4Props {
@@ -51,7 +46,13 @@ const ParadaContent1_4: React.FC<ParadaContent1_4Props> = ({
             transformam a conscientização em uma ferramenta de sobrevivência.
           </p>
         </Text>
-        <ContentImage src={imageSrc} alt={imageAlt} />
+        <ContentImage
+          src={imageSrc}
+          alt={imageAlt}
+          width="52%"
+          objectFit="contain"
+          margin="-4rem 0 0 0"
+        />
       </div>
     </ContentWrapper>
   );

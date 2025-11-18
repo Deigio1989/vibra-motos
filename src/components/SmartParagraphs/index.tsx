@@ -7,7 +7,7 @@ const StyledParagraph = styled.p`
   line-height: 1.5;
 
   .paragraph-title {
-    color: var(--primary-color);
+    color: var(--paragraph-color);
     font-weight: bold;
   }
 `;
@@ -18,7 +18,7 @@ const StyledListItem = styled.li`
   line-height: 1.5;
 
   .bullet-title {
-    color: var(--primary-color);
+    color: var(--paragraph-color);
     font-weight: bold;
   }
 `;

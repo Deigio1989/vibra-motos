@@ -5,6 +5,7 @@ import {
   BaseTitle,
   BaseParagraphs,
 } from "../../styles/ParadaContentStyles";
+import { FramedTextTarja1 } from "../FramedText";
 
 // Usando os componentes base com customizações específicas
 export const ContentWrapper = styled(BaseContentWrapper)`
@@ -19,11 +20,10 @@ export const ContentWrapper = styled(BaseContentWrapper)`
   }
 `;
 
-export const Text = styled(BaseText)`
-  width: 70%;
-  margin: 0 10%;
-  margin-left: 0;
-  margin-right: 0;
+export const Text = styled(FramedTextTarja1)`
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 auto;
 
   .chamada,
   .conclusao {
@@ -50,7 +50,7 @@ export const Paragraphs = styled(BaseParagraphs)`
   li {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--primary-color);
+    color: var(--paragraph-color);
     text-align: justify;
     margin: 0;
     position: relative;
@@ -58,7 +58,7 @@ export const Paragraphs = styled(BaseParagraphs)`
 
     &::before {
       content: "•";
-      color: var(--primary-color);
+      color: var(--paragraph-color);
       font-size: 20px;
       position: absolute;
       left: 0;
@@ -68,7 +68,7 @@ export const Paragraphs = styled(BaseParagraphs)`
     .bullet-title {
       font-weight: 700;
       font-style: normal;
-      color: var(--primary-color);
+      color: var(--paragraph-color);
     }
   }
 

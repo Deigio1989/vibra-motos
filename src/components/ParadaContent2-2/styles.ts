@@ -25,9 +25,34 @@ export const ContentWrapper = styled(BaseContentWrapper)`
   }
 `;
 
-export const Text = styled(TextVariant3)`
+export const Text = styled.div`
+  background-color: transparent;
+  padding: 1rem 2rem;
+  color: var(--primary-color);
+  font-size: 20px;
+  font-family: var(--font-family);
   margin-left: 0;
   margin-right: 5rem;
+
+  b {
+    color: var(--secondary-color);
+    font-weight: bold;
+  }
+
+  .chamada,
+  .conclusao {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 2rem;
+    width: 100%;
+    color: var(--primary-color);
+  }
+
+  .conclusao {
+    margin-bottom: 0;
+    margin-top: 2.5rem;
+  }
 `;
 
 export const Title = styled(BaseTitle)`
@@ -39,9 +64,11 @@ export const Title = styled(BaseTitle)`
 export const Paragraphs = styled(BaseParagraphs)`
   p {
     text-align: justify;
+    color: var(--primary-color);
 
     .paragraph-title {
       color: var(--primary-color);
+      font-weight: bold;
     }
   }
 `;

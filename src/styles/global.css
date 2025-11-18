@@ -223,9 +223,11 @@
 
 :root {
   --primary-color: #ffffff;
+  --paragraph-color: #000;
   --secondary-color: #56aa43;
   --background-color: #004415;
   --secondary-background: #115727;
+  --text-background-color: #c2eecb;
 
   /* Cores dos componentes */
   --accent-green-primary: #137b1a;
@@ -233,7 +235,7 @@
   --disabled-color: #838181ff;
 
   /* Cores acinzentadas dos componentes verdes para anchors anteriores */
-  --accent-green-primary-grayed: #7a9c7d;
+  --accent-green-primary-grayed: #3c5e3e;
   --accent-green-secondary-grayed: #9fb482;
 
   /* Cores bloqueadas dos componentes verdes para anchors bloqueados */

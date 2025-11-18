@@ -41,16 +41,15 @@ const ParadaContent2_3: React.FC<ParadaContent2_3Props> = ({
           <h2 className="title">vida preservada</h2>
         </div>
       </Title>
+      <div className="flex">
+        <Text>
+          <p className="chamada">
+            Uma moto bem cuidada não é luxo: é ferramenta de sobrevivência. De
+            acordo com a PRF, cerca de 20% dos acidentes com motos em rodovias
+            federais envolvem falhas mecânicas simples, que poderiam ter sido
+            evitadas com manutenção preventiva.
+          </p>
 
-      <Text>
-        <p className="chamada">
-          Uma moto bem cuidada não é luxo: é ferramenta de sobrevivência. De
-          acordo com a PRF, cerca de 20% dos acidentes com motos em rodovias
-          federais envolvem falhas mecânicas simples, que poderiam ter sido
-          evitadas com manutenção preventiva.
-        </p>
-
-        <div className="flex">
           <Paragraphs>
             <b>Itens críticos a verificar regularmente:</b>
             {paragraphs.map((paragraph, index) => {
@@ -69,14 +68,9 @@ const ParadaContent2_3: React.FC<ParadaContent2_3Props> = ({
               return <p key={index}>{paragraph}</p>;
             })}
           </Paragraphs>
-
-          <ContentImage
-            className="content-image"
-            src={imageSrc}
-            alt={imageAlt}
-          />
-        </div>
-      </Text>
+        </Text>
+        <ContentImage className="content-image" src={imageSrc} alt={imageAlt} />
+      </div>
     </ContentWrapper>
   );
 };

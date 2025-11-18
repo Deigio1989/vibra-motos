@@ -4,8 +4,8 @@ import {
   BaseText,
   BaseTitle,
   BaseParagraphs,
-  ContentImageVariant4,
 } from "../../styles/ParadaContentStyles";
+import { FramedTextTarja1 } from "../FramedText";
 
 // Usando os componentes base com customizações específicas
 export const ContentWrapper = styled(BaseContentWrapper)`
@@ -19,7 +19,7 @@ export const ContentWrapper = styled(BaseContentWrapper)`
   }
 `;
 
-export const Text = styled(BaseText)`
+export const Text = styled(FramedTextTarja1)`
   width: 65%;
   margin-left: 0;
   margin-right: 1rem;
@@ -39,9 +39,7 @@ export const Title = styled(BaseTitle)`
 export const Paragraphs = styled(BaseParagraphs)`
   p {
     .paragraph-title {
-      color: var(--primary-color);
+      color: var(--paragraph-color);
     }
   }
 `;
-
-export const ContentImage = ContentImageVariant4;

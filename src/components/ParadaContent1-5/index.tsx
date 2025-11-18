@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  ContentWrapper,
-  Text,
-  Title,
-  Paragraphs,
-  ContentImage,
-} from "./styles";
+import { ContentWrapper, Text, Title, Paragraphs } from "./styles";
+import ContentImage from "../ContentImage";
 import paradaImage from "../../assets/img-parada-1-5.png";
 
 interface ParadaContent1_5Props {
@@ -65,7 +60,13 @@ const ParadaContent1_5: React.FC<ParadaContent1_5Props> = ({
             })}
           </Paragraphs>
         </Text>
-        <ContentImage src={imageSrc} alt={imageAlt} />
+        <ContentImage
+          src={imageSrc}
+          alt={imageAlt}
+          width="50%"
+          objectFit="contain"
+          margin="-7rem 0 0 0"
+        />
       </div>
     </ContentWrapper>
   );

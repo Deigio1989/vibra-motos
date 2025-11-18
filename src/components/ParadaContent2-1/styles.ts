@@ -6,14 +6,27 @@ import {
   BaseParagraphs,
   ContentImage as BaseContent,
 } from "../../styles/ParadaContentStyles";
+import { FramedTextTarja1 } from "../FramedText";
 
 // Usando os componentes base - resultado visual idêntico
-export const ContentWrapper = BaseContentWrapper;
-export const Text = BaseText;
-export const Title = BaseTitle;
+export const ContentWrapper = styled(BaseContentWrapper)`
+  flex-direction: column;
+  .flex {
+    display: flex;
+  }
+`;
+export const Text = styled(FramedTextTarja1)`
+  margin-left: 5rem;
+`;
+export const Title = styled(BaseTitle)`
+  margin-left: 5rem;
+  margin-bottom: 0;
+  width: 90%;
+`;
 export const Paragraphs = BaseParagraphs;
 
 // ContentImage já é idêntico ao base
 export const ContentImage = styled(BaseContent)`
-  padding: 5rem 3rem;
+  width: 50%;
+  object-fit: contain;
 `;

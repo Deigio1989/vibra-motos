@@ -23,13 +23,14 @@ const ParadaContent1_1: React.FC<ParadaContent1_1Props> = ({
   paragraphs = [
     "O Brasil é um dos países com maior número de motocicletas no mundo. Segundo dados do Departamento Nacional de Trânsito (Denatran), em 2023 já eram mais de 31 milhões de motos registradas, representando cerca de 30% de toda a frota de veículos. Esse número não para de crescer, especialmente em cidades médias e pequenas, onde a moto é uma solução mais barata e prática do que o transporte público.",
     "Mas a moto não é apenas um meio de transporte. Para milhões de brasileiros, ela é uma ferramenta de trabalho: mototaxistas, entregadores, profissionais de manutenção e tantos outros dependem dela para garantir a própria renda. Por outro lado, para muitos apaixonados, a moto é também sinônimo de lazer, seja em passeios de fim de semana, seja em viagens longas pelas estradas do país.",
+    'Agora, você pode estar pensando: "Mas será que isso realmente se aplica a mim?" Pois saiba que, independentemente de ser novato ou veterano, o que vamos explorar aqui serve para todos que compartilham essa paixão pelas duas rodas.',
   ],
   imageSrc = mapaMoto,
   imageAlt = "Motocicleta com mapa do brasil no fundo",
 }) => {
   return (
     <ContentWrapper className="content">
-      <Text>
+      <div className="flex">
         <Title>
           <h1 className="number">{number}</h1>
           <div className="title-text">
@@ -39,15 +40,22 @@ const ParadaContent1_1: React.FC<ParadaContent1_1Props> = ({
             </h2>
           </div>
         </Title>
+        <Text>
+          <Paragraphs>
+            {paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </Paragraphs>
+        </Text>
+      </div>
 
-        <Paragraphs>
-          {paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </Paragraphs>
-      </Text>
-
-      <ContentImage className="content-image" src={imageSrc} alt={imageAlt} />
+      <ContentImage
+        className="content-image"
+        src={imageSrc}
+        alt={imageAlt}
+        width="50%"
+        objectFit="contain"
+      />
     </ContentWrapper>
   );
 };

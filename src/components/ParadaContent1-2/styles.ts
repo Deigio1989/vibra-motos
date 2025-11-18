@@ -4,15 +4,18 @@ import {
   BaseText,
   BaseTitle,
   BaseParagraphs,
-  ContentImageVariant2,
 } from "../../styles/ParadaContentStyles";
+import { FramedTextTarja2 } from "../FramedText";
 
 // Usando os componentes base com props específicas para manter resultado visual idêntico
 export const ContentWrapper = styled(BaseContentWrapper)`
   flex-direction: column;
+  .flex {
+    gap: 0;
+  }
 `;
 
-export const Text = styled(BaseText)`
+export const Text = styled(FramedTextTarja2)`
   margin-left: 1rem;
   margin-right: 5rem;
   width: 65%;
@@ -28,4 +31,3 @@ export const Title = styled(BaseTitle)`
 `;
 
 export const Paragraphs = BaseParagraphs;
-export const ContentImage = ContentImageVariant2;

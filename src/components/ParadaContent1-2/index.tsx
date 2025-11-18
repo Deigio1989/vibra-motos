@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  ContentWrapper,
-  Text,
-  Title,
-  Paragraphs,
-  ContentImage,
-} from "./styles";
-import image1 from "../../assets/img-parada-1-2-1.png";
-import image2 from "../../assets/img-parada-1-2-2.png";
-import image3 from "../../assets/img-parada-1-2-3.png";
+import { ContentWrapper, Text, Title, Paragraphs } from "./styles";
+import ContentImage from "../ContentImage";
+import image1 from "../../assets/img-parada-1-2.png";
 
 interface ParadaContent1_2Props {
   number?: string;
@@ -29,7 +22,7 @@ const ParadaContent1_2: React.FC<ParadaContent1_2Props> = ({
     "Na trilha ou em estradas de terra: Aqui, a aventura é o combustível. Terrenos irregulares, lama, pedras, cascalho, falta de aderência na pista e de sinalização exigem habilidades específicas. O risco não está apenas no ambiente natural, mas também na ausência de infraestrutura de socorro. O motociclista que se arrisca em trilhas sem preparo técnico ou equipamentos adequados aumenta significativamente sua vulnerabilidade.",
     'Cada ambiente exige adaptação. A consciência de que não existe uma "forma única" de pilotar é fundamental para reduzir riscos.',
   ],
-  imageSrc = [image1, image2, image3],
+  imageSrc = image1,
   imageAlt = "estrada",
 }) => {
   return (
@@ -46,11 +39,12 @@ const ParadaContent1_2: React.FC<ParadaContent1_2Props> = ({
         </div>
       </Title>
       <div className="flex">
-        <div className="image-column">
-          <ContentImage src={imageSrc[0]} alt={imageAlt} />
-          <ContentImage src={imageSrc[1]} alt={imageAlt} />
-          <ContentImage src={imageSrc[2]} alt={imageAlt} />
-        </div>
+        <ContentImage
+          src={imageSrc}
+          alt={imageAlt}
+          width={"40%"}
+          objectFit="contain"
+        />
 
         <Text>
           <Paragraphs>

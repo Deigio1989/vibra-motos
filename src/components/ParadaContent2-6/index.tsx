@@ -63,7 +63,12 @@ const ParadaContent2_6: React.FC<ParadaContent2_6Props> = ({
           </Paragraphs>
         </Text>
 
-        <ContentImage className="content-image" src={imageSrc} alt={imageAlt} />
+        <ContentImage
+          className="content-image"
+          src={imageSrc}
+          alt={imageAlt}
+          width={"45%"}
+        />
       </div>
     </ContentWrapper>
   );

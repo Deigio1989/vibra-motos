@@ -12,6 +12,7 @@ import ParadaContent2_6 from "../../components/ParadaContent2-6";
 import placa from "../../assets/placa.png";
 import avancar from "../../assets/avancar.png";
 import back from "../../assets/back.png";
+import tarjaListra from "../../assets/tarja-listra.jpg";
 
 import Roadmap from "../../components/Roadmap2";
 import { NavigationProvider, useNavigation } from "../../store/navigationStore";
@@ -56,7 +57,7 @@ const ParadaNavigation = () => {
   const { activeContentId, setActiveContent } = useNavigation();
   const navigate = useNavigate();
 
-  const totalContents = 6; // Total de conteúdos da Parada2
+  const totalContents = 6; // Total de conteúdos da Parada3
 
   const handleNext = () => {
     if (activeContentId < totalContents) {
@@ -102,13 +103,13 @@ const ParadaNavigation = () => {
   );
 };
 
-const Parada2 = () => {
+const Parada3 = () => {
   return (
     <ProgressionProvider>
       <NavigationProvider>
         <ParadaContainer className="container">
           <PitstopTitle
-            title="SEGUNDA PARADA"
+            title="TERCEIRA PARADA"
             iconSrc={placa}
             iconAlt="placa parar"
           />
@@ -119,10 +120,15 @@ const Parada2 = () => {
 
           {/* Navegação com funcionalidade */}
           <ParadaNavigation />
+
+          {/* Tarja listra no final */}
+          <div className="tarja-listra">
+            <img src={tarjaListra} alt="" />
+          </div>
         </ParadaContainer>
       </NavigationProvider>
     </ProgressionProvider>
   );
 };
 
-export default Parada2;
+export default Parada3;

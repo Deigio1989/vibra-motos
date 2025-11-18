@@ -34,12 +34,7 @@ export const BaseContentWrapper = styled.div<BaseContentWrapperProps>`
           margin: ${props.margin || "0 5rem"};
         `;
       default:
-        return css`
-          .content-image {
-            width: 55%;
-            object-fit: contain;
-          }
-        `;
+        return css``;
     }
   }}
 
@@ -55,11 +50,6 @@ export const BaseContentWrapper = styled.div<BaseContentWrapperProps>`
     flex-direction: column;
     gap: 2rem;
   }
-
-  .content-image {
-    width: 55%;
-    object-fit: contain;
-  }
 `;
 
 interface BaseTextProps {
@@ -71,6 +61,9 @@ interface BaseTextProps {
 }
 
 export const BaseText = styled.div<BaseTextProps>`
+  background-color: var(--text-background-color);
+  padding: 1rem 2rem;
+  color: #000;
   font-size: 20px;
   font-family: var(--font-family);
 
@@ -86,7 +79,7 @@ export const BaseText = styled.div<BaseTextProps>`
   .conclusao {
     font-size: 20px;
     line-height: 1.6;
-    color: var(--primary-color);
+
     text-align: justify;
     margin-bottom: 2rem;
     width: ${(props) => (props.width === "65%" ? "100%" : "75%")};
@@ -162,7 +155,7 @@ export const BaseParagraphs = styled.div<BaseParagraphsProps>`
   p {
     font-size: 20px;
     line-height: 1.6;
-    color: var(--primary-color);
+    color: var(--paragraph-color);
     margin: 0;
     ${(props) => !props.hasCustomBullets && "text-align: justify;"}
 
@@ -193,7 +186,7 @@ export const BaseParagraphs = styled.div<BaseParagraphsProps>`
       li {
         font-size: 20px;
         line-height: 1.6;
-        color: var(--primary-color);
+        color: var(--paragraph-color);
         text-align: justify;
         margin: 0;
         position: relative;
@@ -201,7 +194,7 @@ export const BaseParagraphs = styled.div<BaseParagraphsProps>`
 
         &::before {
           content: "•";
-          color: var(--primary-color);
+          color: var(--paragraph-color);
           font-size: 20px;
           position: absolute;
           left: 0;
@@ -211,7 +204,7 @@ export const BaseParagraphs = styled.div<BaseParagraphsProps>`
         .bullet-title {
           font-weight: 700;
           font-style: normal;
-          color: var(--primary-color);
+          color: var(--paragraph-color);
         }
       }
     `}
@@ -294,11 +287,6 @@ export const ParadaContainer = styled.div`
   .content {
     margin-top: 3rem;
     display: flex;
-
-    .content-image {
-      width: 55%;
-      object-fit: contain;
-    }
   }
 
   .navigation {
@@ -310,6 +298,20 @@ export const ParadaContainer = styled.div`
       margin-top: 4rem;
       width: 11rem;
       cursor: pointer;
+    }
+  }
+
+  .tarja-listra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   }
 `;

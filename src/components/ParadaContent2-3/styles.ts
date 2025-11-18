@@ -5,30 +5,26 @@ import {
   BaseParagraphs,
   TextVariant3,
 } from "../../styles/ParadaContentStyles";
+import { FramedTextTarja1 } from "../FramedText";
 
 // Usando os componentes base com customizações específicas
 export const ContentWrapper = styled(BaseContentWrapper)`
-  margin-left: 5rem;
   flex-direction: column;
 
   .flex {
     display: flex;
     margin-bottom: 2rem;
-    .content-image {
-      padding: 3rem;
-    }
   }
 `;
 
-export const Text = styled(TextVariant3)`
-  margin-left: 0;
-  margin-right: 5rem;
+export const Text = styled(FramedTextTarja1)`
   .chamada {
     width: 100%;
   }
 `;
 
 export const Title = styled(BaseTitle)`
+  padding-left: 5rem;
   .title-text span {
     font-size: 64px;
   }
@@ -37,13 +33,14 @@ export const Title = styled(BaseTitle)`
 export const Paragraphs = styled(BaseParagraphs)`
   p {
     .paragraph-title {
-      color: var(--primary-color);
+      color: var(--paragraph-color);
     }
   }
 `;
 
 export const ContentImage = styled.img`
   /* Estilos para a imagem do conteúdo */
-  max-width: 100%;
-  height: auto;
+  width: 50%;
+  padding: 0;
+  object-fit: contain;
 `;
