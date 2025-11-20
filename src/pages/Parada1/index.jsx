@@ -16,6 +16,8 @@ import back from "../../assets/back.png";
 import tarjaListra from "../../assets/tarja-listra.jpg";
 
 import Roadmap from "../../components/Roadmap";
+import ModularIntro from "../../components/ModularIntro";
+import { PARADA1_INTRO_DATA } from "../../data/parada1IntroData";
 import { NavigationProvider, useNavigation } from "../../store/navigationStore";
 import {
   ProgressionProvider,
@@ -109,29 +111,39 @@ const ParadaNavigation = () => {
   );
 };
 
+// Componente que usa o hook dentro do provider
+const Parada1Content = () => {
+  const { activeContentId } = useNavigation();
+  
+  return (
+    <ParadaContainer className="container">
+      <PitstopTitle
+        title="PRIMEIRA PARADA"
+        iconSrc={placa}
+        iconAlt="placa parar"
+      />
+      {/* ModularIntro só aparece no primeiro bloco */}
+      {activeContentId === 1 && (
+        <ModularIntro sections={PARADA1_INTRO_DATA} />
+      )}
+      <Roadmap />
+      {/* Renderiza apenas o content ativo */}
+      <ParadaContent />
+      {/* Navegação com funcionalidade */}
+      <ParadaNavigation />
+      {/* Tarja listra no final */}
+      <div className="tarja-listra">
+        <img src={tarjaListra} alt="" />
+      </div>
+    </ParadaContainer>
+  );
+};
+
 const Parada1 = () => {
   return (
     <ProgressionProvider>
       <NavigationProvider>
-        <ParadaContainer className="container">
-          <PitstopTitle
-            title="PRIMEIRA PARADA"
-            iconSrc={placa}
-            iconAlt="placa parar"
-          />
-          <Roadmap />
-
-          {/* Renderiza apenas o content ativo */}
-          <ParadaContent />
-
-          {/* Navegação com funcionalidade */}
-          <ParadaNavigation />
-
-          {/* Tarja listra no final */}
-          <div className="tarja-listra">
-            <img src={tarjaListra} alt="" />
-          </div>
-        </ParadaContainer>
+        <Parada1Content />
       </NavigationProvider>
     </ProgressionProvider>
   );
