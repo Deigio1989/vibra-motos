@@ -5,6 +5,9 @@ import quizBackground from "../../assets/quiz-background.png";
 import seta from "../../assets/seta.png";
 import { QUIZ1_DATA } from "../../data/quiz1Data";
 import { useScorm } from "../../hooks/useScorm";
+import QuizFeedback from "../../components/QuizFeedback";
+import { NextButton } from "../../styles/ButtonStyles";
+import avancar from "../../assets/avancar.png";
 
 const Quiz1: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -55,53 +58,18 @@ const Quiz1: React.FC = () => {
 
     return (
       <div>
-        <QuizContainer>
-          <QuizBackground>
-            <img
-              className="bg-image"
-              src={quizBackground}
-              alt="Quiz Background"
-            />
-            <div className="text-container">
-              <div className="provisional-screen">
-                <h2 className="provisional-title">Quiz Concluído!</h2>
-                <div className="score-display">
-                  <h3 className="score-title">Resultado do Quiz</h3>
-                  <div className="score-info">
-                    <p className="score-text">
-                      Sua pontuação:{" "}
-                      <strong>
-                        {scoreData.correct}/{scoreData.total} acertos
-                      </strong>
-                    </p>
-                    <p className="score-percentage">
-                      ({scoreData.percentage}%)
-                    </p>
-                    <p className="status-text">
-                      Status: {passed ? "✅ APROVADO" : "⚠️ NECESSITA MELHORIA"}
-                    </p>
-                  </div>
-                </div>
-                <div className="test-info">
-                  <p className="test-note">
-                    Score registrado no sistema SCORM: {scoreData.percentage}%
-                  </p>
-                  <p className="test-note">
-                    Parabéns! Agora você pode avançar para a próxima parada.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <button
-              className="quiz-button"
-              onClick={handleAdvanceToParada2}
-              style={{ marginTop: "2rem" }}
-            >
-              <p className="button-text">AVANÇAR PARA PARADA 2</p>
-              <img className="seta" src={seta} alt="Seta" />
-            </button>
-          </QuizBackground>
-        </QuizContainer>
+        <QuizFeedback
+          score={{
+            correct: scoreData.correct,
+            total: scoreData.total,
+            percentage: scoreData.percentage,
+          }}
+          nextButton={
+            <NextButton onClick={handleAdvanceToParada2}>
+              <img src={avancar} alt="Avançar para Parada 2" />
+            </NextButton>
+          }
+        />
       </div>
     );
   }

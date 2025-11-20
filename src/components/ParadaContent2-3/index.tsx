@@ -28,7 +28,7 @@ const ParadaContent2_3: React.FC<ParadaContent2_3Props> = ({
     "Bateria e parte elétrica: sinais de fraqueza não devem ser ignorados. Uma falha elétrica pode deixar o piloto vulnerável em locais perigosos. Manutenção não é gasto, é investimento em segurança.",
   ],
   imageSrc = paradaImage,
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">

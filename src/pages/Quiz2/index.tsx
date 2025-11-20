@@ -5,6 +5,9 @@ import quizBackground from "../../assets/quiz-background.png";
 import seta from "../../assets/seta.png";
 import { QUIZ2_DATA } from "../../data/quiz2Data";
 import { useScorm } from "../../hooks/useScorm";
+import QuizFeedback from "../../components/QuizFeedback";
+import { NextButton } from "../../styles/ButtonStyles";
+import avancar from "../../assets/avancar.png";
 
 const Quiz2: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -39,9 +42,9 @@ const Quiz2: React.FC = () => {
     return { correct, total: QUIZ2_DATA.questions.length, percentage };
   };
 
-  // Função para finalizar o curso
-  const handleFinalizeCourse = () => {
-    navigate("/"); // Volta para o início ou crie uma tela de conclusão
+  // Função para continuar para Parada3
+  const handleContinueToParada3 = () => {
+    navigate("/parada3"); // Vai para Parada3
   };
 
   // Debug log
@@ -55,53 +58,18 @@ const Quiz2: React.FC = () => {
 
     return (
       <div>
-        <QuizContainer>
-          <QuizBackground>
-            <img
-              className="bg-image"
-              src={quizBackground}
-              alt="Quiz Background"
-            />
-            <div className="text-container">
-              <div className="provisional-screen">
-                <h2 className="provisional-title">Quiz Concluído!</h2>
-                <div className="score-display">
-                  <h3 className="score-title">Resultado do Quiz</h3>
-                  <div className="score-info">
-                    <p className="score-text">
-                      Sua pontuação:{" "}
-                      <strong>
-                        {scoreData.correct}/{scoreData.total} acertos
-                      </strong>
-                    </p>
-                    <p className="score-percentage">
-                      ({scoreData.percentage}%)
-                    </p>
-                    <p className="status-text">
-                      Status: {passed ? "✅ APROVADO" : "⚠️ NECESSITA MELHORIA"}
-                    </p>
-                  </div>
-                </div>
-                <div className="test-info">
-                  <p className="test-note">
-                    Score registrado no sistema SCORM: {scoreData.percentage}%
-                  </p>
-                  <p className="test-note">
-                    Parabéns! Você completou todos os módulos.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <button
-              className="quiz-button"
-              onClick={handleFinalizeCourse}
-              style={{ marginTop: "2rem" }}
-            >
-              <p className="button-text">CURSO CONCLUÍDO</p>
-              <img className="seta" src={seta} alt="Seta" />
-            </button>
-          </QuizBackground>
-        </QuizContainer>
+        <QuizFeedback
+          score={{
+            correct: scoreData.correct,
+            total: scoreData.total,
+            percentage: scoreData.percentage,
+          }}
+          nextButton={
+            <NextButton onClick={handleContinueToParada3}>
+              <img src={avancar} alt="Avançar" />
+            </NextButton>
+          }
+        />
       </div>
     );
   }

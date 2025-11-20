@@ -3,18 +3,20 @@ import { useNavigate } from "react-router-dom";
 import { ParadaContainer } from "../../styles/ParadaContentStyles";
 import { NextButton } from "../../styles/ButtonStyles";
 import PitstopTitle from "../../components/PitstopTitle";
-import ParadaContent2_1 from "../../components/ParadaContent2-1";
-import ParadaContent2_2 from "../../components/ParadaContent2-2";
-import ParadaContent2_3 from "../../components/ParadaContent2-3";
-import ParadaContent2_4 from "../../components/ParadaContent2-4";
-import ParadaContent2_5 from "../../components/ParadaContent2-5";
-import ParadaContent2_6 from "../../components/ParadaContent2-6";
+import ParadaContent3_1 from "../../components/ParadaContent3-1";
+import ParadaContent3_2 from "../../components/ParadaContent3-2";
+import ParadaContent3_3 from "../../components/ParadaContent3-3";
+import ParadaContent3_4 from "../../components/ParadaContent3-4";
+import ParadaContent3_5 from "../../components/ParadaContent3-5";
+import ParadaContent3_6 from "../../components/ParadaContent3-6";
+import ParadaContent3_7 from "../../components/ParadaContent3-7";
+import ParadaContent3_8 from "../../components/ParadaContent3-8";
 import placa from "../../assets/placa.png";
 import avancar from "../../assets/avancar.png";
 import back from "../../assets/back.png";
 import tarjaListra from "../../assets/tarja-listra.jpg";
 
-import Roadmap from "../../components/Roadmap2";
+import Roadmap from "../../components/Roadmap3";
 import { NavigationProvider, useNavigation } from "../../store/navigationStore";
 import { ProgressionProvider } from "../../store/progressionStore";
 import ContentAnimation from "../../components/ContentAnimation";
@@ -28,20 +30,24 @@ const ParadaContent = () => {
     const content = (() => {
       switch (activeContentId) {
         case 1:
-          return <ParadaContent2_1 />;
+          return <ParadaContent3_1 />;
         case 2:
-          return <ParadaContent2_2 />;
+          return <ParadaContent3_2 />;
         case 3:
-          return <ParadaContent2_3 />;
+          return <ParadaContent3_3 />;
         case 4:
-          return <ParadaContent2_4 />;
+          return <ParadaContent3_4 />;
         case 5:
-          return <ParadaContent2_5 />;
+          return <ParadaContent3_5 />;
         case 6:
-          return <ParadaContent2_6 />;
+          return <ParadaContent3_6 />;
+        case 7:
+          return <ParadaContent3_7 />;
+        case 8:
+          return <ParadaContent3_8 />;
 
         default:
-          return <ParadaContent2_1 />; // Fallback para o primeiro
+          return <ParadaContent3_1 />; // Fallback para o primeiro
       }
     })();
 
@@ -57,7 +63,7 @@ const ParadaNavigation = () => {
   const { activeContentId, setActiveContent } = useNavigation();
   const navigate = useNavigate();
 
-  const totalContents = 6; // Total de conteúdos da Parada3
+  const totalContents = 8; // Total de conteúdos da Parada3
 
   const handleNext = () => {
     if (activeContentId < totalContents) {
@@ -65,8 +71,8 @@ const ParadaNavigation = () => {
       // Scroll para o topo ao avançar conteúdo
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      // Se está no último conteúdo, navega para Retrovisor2
-      navigate("/retrovisor2");
+      // Se está no último conteúdo, navega para Retrovisor3
+      navigate("/retrovisor3");
     }
   };
 
@@ -94,11 +100,9 @@ const ParadaNavigation = () => {
           pointerEvents: isFirstContent ? "none" : "auto",
         }}
       />
-      <NextButton
-        src={avancar}
-        alt={isLastContent ? "Ir para Quiz" : "Avançar"}
-        onClick={handleNext}
-      />
+      <NextButton onClick={handleNext}>
+        <img src={avancar} alt={isLastContent ? "Ir para Quiz" : "Avançar"} />
+      </NextButton>
     </div>
   );
 };

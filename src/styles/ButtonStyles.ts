@@ -14,11 +14,14 @@ const pulse = keyframes`
 `;
 
 // Componente Next Button unificado
-export const NextButton = styled.img`
+export const NextButton = styled.button`
   margin-top: 2rem;
   align-self: flex-end;
   width: 11rem;
   cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
 
   /* Animação de pulsar suave */
   animation: ${pulse} 2s ease-in-out infinite;
@@ -33,5 +36,11 @@ export const NextButton = styled.img`
 
   &:active {
     transform: scale(0.95);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 `;

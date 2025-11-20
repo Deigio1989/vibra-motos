@@ -26,7 +26,7 @@ const ParadaContent2_5: React.FC<ParadaContent2_5Props> = ({
   number = "5",
 
   imageSrc = mapaMoto,
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">

@@ -48,7 +48,7 @@ export const Paragraphs = styled(BaseParagraphs)`
   }
 
   li {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
     color: var(--paragraph-color);
     text-align: justify;

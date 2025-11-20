@@ -21,7 +21,7 @@ const ParadaContent1_5: React.FC<ParadaContent1_5Props> = ({
     "Ignorar essas regras não significa apenas correr risco de multa. Significa colocar a própria vida em perigo, e também a de terceiros.",
   ],
   imageSrc = paradaImage,
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">

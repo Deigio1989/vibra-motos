@@ -26,7 +26,7 @@ const ParadaContent2_1: React.FC<ParadaContent2_1Props> = ({
   number = "1",
 
   imageSrc = mapaMoto,
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">
@@ -66,7 +66,7 @@ const ParadaContent2_1: React.FC<ParadaContent2_1Props> = ({
           className="content-image"
           src={imageSrc}
           alt={imageAlt}
-          objectFit="contain"
+          width={"50%"}
         />
       </div>
     </ContentWrapper>

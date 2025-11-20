@@ -18,6 +18,16 @@ import icon24 from "../assets/icon-2-4.png";
 import icon25 from "../assets/icon-2-5.png";
 import icon26 from "../assets/icon-2-6.png";
 
+// Ícones da Parada 3
+import icon31 from "../assets/icon-3-1.png";
+import icon32 from "../assets/icon-3-2.png";
+import icon33 from "../assets/icon-3-3.png";
+import icon34 from "../assets/icon-3-4.png";
+import icon35 from "../assets/icon-3-5.png";
+import icon36 from "../assets/icon-3-6.png";
+import icon37 from "../assets/icon-3-7.png";
+import icon38 from "../assets/icon-3-8.png";
+
 export const PARADA1_ANCHORS: AnchorData[] = [
   {
     iconSrc: icon11,
@@ -99,5 +109,56 @@ export const PARADA2_ANCHORS: AnchorData[] = [
     isOpen: false,
     number: 6,
     title: "Casos reais",
+  },
+];
+
+export const PARADA3_ANCHORS: AnchorData[] = [
+  {
+    iconSrc: icon31,
+    isOpen: true,
+    number: 1,
+    title: "Ponto cego: o inimigo invisível",
+  },
+  {
+    iconSrc: icon32,
+    isOpen: false,
+    number: 2,
+    title: "Frenagem correta: parar sem cair",
+  },
+  {
+    iconSrc: icon33,
+    isOpen: false,
+    number: 3,
+    title: "Curvas: prazer e desafio",
+  },
+  {
+    iconSrc: icon34,
+    isOpen: false,
+    number: 4,
+    title: "Obstáculos",
+  },
+  {
+    iconSrc: icon35,
+    isOpen: false,
+    number: 5,
+    title: "Clima: quando a natureza dita o ritmo",
+  },
+  {
+    iconSrc: icon36,
+    isOpen: false,
+    number: 6,
+    title: "Postura: o corpo também pilota",
+  },
+  {
+    iconSrc: icon37,
+    isOpen: false,
+    number: 7,
+    title: "Áreas de conflito",
+  },
+  {
+    iconSrc: icon38,
+    isOpen: false,
+    number: 8,
+    title: "Dicas do dia a dia",
   },
 ];

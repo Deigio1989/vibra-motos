@@ -41,9 +41,7 @@
       <file href="assets/icon-2-4.png"/>
       <file href="assets/icon-2-5.png"/>
       <file href="assets/icon-2-6.png"/>
-      <file href="assets/img-parada-1-2-1.png"/>
-      <file href="assets/img-parada-1-2-2.png"/>
-      <file href="assets/img-parada-1-2-3.png"/>
+      <file href="assets/img-parada-1-2.png"/>
       <file href="assets/img-parada-1-3.png"/>
       <file href="assets/img-parada-1-4.png"/>
       <file href="assets/img-parada-1-5.png"/>
@@ -58,6 +56,13 @@
       <file href="assets/img-parada-2-2-3.png"/>
       <file href="assets/img-parada-2-3.png"/>
       <file href="assets/img-parada-2-5.png"/>
+      <file href="assets/img-parada-2-6.png"/>
+      <file href="assets/img-parada-3-2.png"/>
+      <file href="assets/img-parada-3-3.png"/>
+      <file href="assets/img-parada-3-4.png"/>
+      <file href="assets/img-parada-3-5.png"/>
+      <file href="assets/img-parada-3-6.png"/>
+      <file href="assets/img-parada-3-7.png"/>
       <file href="assets/logo-vibra.png"/>
       <file href="assets/main.css"/>
       <file href="assets/main.js"/>
@@ -72,9 +77,11 @@
       <file href="assets/retrovisor.png"/>
       <file href="assets/roadmap.png"/>
       <file href="assets/roadmap2.png"/>
+      <file href="assets/roadmap3.png"/>
       <file href="assets/semaforo.png"/>
       <file href="assets/seta.png"/>
       <file href="assets/tarja-cabeçalho.png"/>
+      <file href="assets/tarja-listra.jpg"/>
       <file href="assets/tarja-paradas.png"/>
     </resource>
   </resources>

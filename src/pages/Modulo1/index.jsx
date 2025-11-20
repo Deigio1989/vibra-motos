@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import tarjaCabeçalho from "../../assets/tarja-cabeçalho.png";
 import logoVibra from "../../assets/logo-vibra.png";
-import marcaFundo from "../../assets/marca-fundo.png";
+import marcaFundo from "../../assets/marca-dobra.png";
 import motoDobra from "../../assets/moto-dobra.png";
 import semaforo from "../../assets/semaforo.png";
 import PitstopTitle from "../../components/PitstopTitle";
@@ -57,7 +57,9 @@ const Modulo1 = () => {
             allowFullScreen
           ></iframe>
         </div>
-        <NextButton src={avancar} alt="Avançar" onClick={handleNext} />
+        <NextButton onClick={handleNext}>
+          <img src={avancar} alt="Avançar" />
+        </NextButton>
       </VideoSection>
     </ModuleMain>
   );

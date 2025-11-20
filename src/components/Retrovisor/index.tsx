@@ -6,22 +6,22 @@ import retrovisor from "../../assets/retrovisor.png";
 import retrovisorBody from "../../assets/retrovisor-body.png";
 import retrovisorBack from "../../assets/retrovisor-back.png";
 import retrovisorTitle from "../../assets/retrovisor-title.png";
+import tarjaListra from "../../assets/tarja-listra.jpg";
 
-import {
-  ModuleMain,
-  RetrovisorContainer,
-} from "../../pages/Retrovisor1/styles";
+import { ModuleMain, RetrovisorContainer, FooterImage } from "./styles";
 
 interface RetrovisorProps {
   paragraphs: (string | React.ReactNode)[];
   nextRoute: string;
   nextButtonAlt?: string;
+  imgSrc?: string;
 }
 
 const Retrovisor: React.FC<RetrovisorProps> = ({
   paragraphs,
   nextRoute,
   nextButtonAlt = "Avançar",
+  imgSrc,
 }) => {
   const navigate = useNavigate();
 
@@ -48,15 +48,18 @@ const Retrovisor: React.FC<RetrovisorProps> = ({
           <div className="retrovisor-image">
             <img
               className="retrovisor-image-back"
-              src={retrovisorBack}
+              src={imgSrc || retrovisorBack}
               alt=""
             />
             <img className="retrovisor-image-front" src={retrovisor} alt="" />
           </div>
         </div>
 
-        <NextButton src={avancar} alt={nextButtonAlt} onClick={handleNext} />
+        <NextButton onClick={handleNext}>
+          <img src={avancar} alt={nextButtonAlt} />
+        </NextButton>
       </RetrovisorContainer>
+      <FooterImage src={tarjaListra} alt="" />
     </ModuleMain>
   );
 };

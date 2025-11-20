@@ -72,7 +72,7 @@ const FramedTextWrapper = styled.div<{
 // Container do conteúdo - com padding apenas no texto
 const ContentContainer = styled.div`
   background-color: var(--text-background-color);
-  padding: 1rem 2rem; /* Padding apenas no conteúdo */
+  padding: 2rem 2rem; /* Padding apenas no conteúdo */
   color: #000;
   font-size: 20px;
   font-family: var(--font-family);

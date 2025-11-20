@@ -27,7 +27,7 @@ const ParadaContent2_2: React.FC<ParadaContent2_2Props> = ({
     "Distância de segurança: mantenha ao menos 3 segundos do veículo à frente em condições normais. Em chuva ou pista molhada, dobre para 6 segundos. Essa margem evita colisões em freadas bruscas.",
   ],
   imageSrc = [paradaImage, paradaImage2, paradaImage3],
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">

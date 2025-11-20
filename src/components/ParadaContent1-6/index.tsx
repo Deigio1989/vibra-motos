@@ -22,7 +22,7 @@ const ParadaContent1_6: React.FC<ParadaContent1_6Props> = ({
   ],
   conclusionParagraph = "Especialistas recomendam: se for usar, que seja em baixa velocidade e com atenção redobrada.",
   imageSrc = paradaImage,
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">

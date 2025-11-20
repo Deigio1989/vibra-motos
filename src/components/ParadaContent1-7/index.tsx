@@ -30,7 +30,7 @@ const ParadaContent1_7: React.FC<ParadaContent1_7Props> = ({
   ],
   imageSrc = [paradaImage1, paradaImage2, paradaImage3, paradaImage4],
 
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">

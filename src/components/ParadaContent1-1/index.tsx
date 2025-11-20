@@ -7,6 +7,7 @@ import {
   ContentImage,
 } from "./styles";
 import mapaMoto from "../../assets/mapa-moto.png";
+import { NormalParagraph } from "../SmartParagraphs";
 
 interface ParadaContent1_1Props {
   number?: string;
@@ -26,7 +27,7 @@ const ParadaContent1_1: React.FC<ParadaContent1_1Props> = ({
     'Agora, você pode estar pensando: "Mas será que isso realmente se aplica a mim?" Pois saiba que, independentemente de ser novato ou veterano, o que vamos explorar aqui serve para todos que compartilham essa paixão pelas duas rodas.',
   ],
   imageSrc = mapaMoto,
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">
@@ -43,7 +44,7 @@ const ParadaContent1_1: React.FC<ParadaContent1_1Props> = ({
         <Text>
           <Paragraphs>
             {paragraphs.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
+              <NormalParagraph key={index}>{paragraph}</NormalParagraph>
             ))}
           </Paragraphs>
         </Text>

@@ -27,7 +27,7 @@ const ParadaContent1_3: React.FC<ParadaContent1_3Props> = ({
     "Excesso de confiança: pilotos experientes às vezes subestimam riscos, acreditando dominar qualquer situação.",
   ],
   imageSrc = paradaImage,
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">

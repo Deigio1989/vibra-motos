@@ -13,7 +13,7 @@ export const PitstopTitleStyled = styled.div`
     padding-top: 0.5rem;
     line-height: 1;
     transform: translateY(-50%);
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .tarja-paradas {

@@ -96,11 +96,9 @@ const ParadaNavigation = () => {
           pointerEvents: isFirstContent ? "none" : "auto",
         }}
       />
-      <NextButton
-        src={avancar}
-        alt={isLastContent ? "Ir para Quiz" : "Avançar"}
-        onClick={handleNext}
-      />
+      <NextButton onClick={handleNext}>
+        <img src={avancar} alt={isLastContent ? "Ir para Quiz" : "Avançar"} />
+      </NextButton>
     </div>
   );
 };

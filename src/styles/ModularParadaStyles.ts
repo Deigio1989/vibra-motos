@@ -142,7 +142,7 @@ export const BaseTitle = styled.div<TitleProps>`
 
 export const BaseParagraphs = styled.div`
   p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
     color: var(--paragraph-color);
     text-align: justify;
@@ -168,7 +168,7 @@ export const BaseParagraphs = styled.div`
     gap: 1rem;
 
     li {
-      font-size: 16px;
+      font-size: 20px;
       line-height: 1.6;
       color: var(--paragraph-color);
       text-align: justify;

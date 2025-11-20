@@ -21,7 +21,7 @@ const ParadaContent1_4: React.FC<ParadaContent1_4Props> = ({
     "Estima-se que, por ano, mais de 12 mil motociclistas morram no país (DATASUS, 2022).",
   ],
   imageSrc = paradaImage,
-  imageAlt = "Motocicleta com mapa do brasil no fundo",
+  imageAlt = "alt prosivório",
 }) => {
   return (
     <ContentWrapper className="content">

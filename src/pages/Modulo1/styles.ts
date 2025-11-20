@@ -52,13 +52,14 @@ export const BackgroundImages = styled.div`
   }
   .intro-image {
     top: 0;
-    left: 40%;
+    right: 0;
     height: 80%;
   }
   .marca {
-    bottom: 0;
-    left: 0;
-    width: 35%;
+    top: 65%;
+    left: 40%;
+    transform: translateX(-50%);
+    width: 30%;
   }
 `;
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Retrovisor from "../../components/Retrovisor";
+import retrovisorBack2 from "../../assets/retrovisor-back-2.png";
 
 const Retrovisor2 = () => {
   const paragraphs = [
@@ -13,6 +14,7 @@ const Retrovisor2 = () => {
 
   return (
     <Retrovisor
+      imgSrc={retrovisorBack2}
       paragraphs={paragraphs}
       nextRoute="/quiz2"
       nextButtonAlt="Ir para Quiz 2"
