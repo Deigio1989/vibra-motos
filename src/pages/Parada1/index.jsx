@@ -18,12 +18,27 @@ import tarjaListra from "../../assets/tarja-listra.jpg";
 import Roadmap from "../../components/Roadmap";
 import ModularIntro from "../../components/ModularIntro";
 import { PARADA1_INTRO_DATA } from "../../data/parada1IntroData";
+import { withPageLoader } from "../../hoc/withPageLoader";
 import { NavigationProvider, useNavigation } from "../../store/navigationStore";
 import {
   ProgressionProvider,
   useProgression,
 } from "../../store/progressionStore";
 import ContentAnimation from "../../components/ContentAnimation";
+import { useContentTimer } from "../../hooks/useContentTimer";
+
+// Importar todas as imagens para pré-carregamento
+import mapaMoto from "../../assets/mapa-moto.png";
+import imgParada12 from "../../assets/img-parada-1-2.png";
+import imgParada13 from "../../assets/img-parada-1-3.png";
+import imgParada14 from "../../assets/img-parada-1-4.png";
+import imgParada15 from "../../assets/img-parada-1-5.png";
+import imgParada16 from "../../assets/img-parada-1-6.png";
+import imgParada171 from "../../assets/img-parada-1-7-1.png";
+import imgParada172 from "../../assets/img-parada-1-7-2.png";
+import imgParada173 from "../../assets/img-parada-1-7-3.png";
+import imgParada174 from "../../assets/img-parada-1-7-4.png";
+import Timer from "../../components/Timer";
 
 // Componente interno que usa o navigation
 const ParadaContent = () => {
@@ -64,6 +79,10 @@ const ParadaNavigation = () => {
   const { activeContentId, setActiveContent } = useNavigation();
   const { updateProgression } = useProgression();
   const navigate = useNavigate();
+  const { canAdvance } = useContentTimer(
+    `parada1-content${activeContentId}`,
+    60
+  );
 
   const totalContents = 7; // Total de conteúdos da Parada1
 
@@ -73,7 +92,9 @@ const ParadaNavigation = () => {
       setActiveContent(nextContentId);
       updateProgression(nextContentId); // Atualiza a progressão igual ao anchor point
       // Scroll para o topo ao avançar conteúdo
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
     } else {
       // Se está no último conteúdo, navega para Retrovisor1
       navigate("/retrovisor1");
@@ -84,7 +105,9 @@ const ParadaNavigation = () => {
     if (activeContentId > 1) {
       setActiveContent(activeContentId - 1);
       // Scroll para o topo ao voltar conteúdo
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
     }
   };
 
@@ -104,7 +127,12 @@ const ParadaNavigation = () => {
           pointerEvents: isFirstContent ? "none" : "auto",
         }}
       />
-      <NextButton onClick={handleNext}>
+      <Timer contentId={`parada1-content${activeContentId}`} />
+      <NextButton
+        onClick={handleNext}
+        disabled={!canAdvance}
+        $canAdvance={canAdvance}
+      >
         <img src={avancar} alt={isLastContent ? "Ir para Quiz" : "Avançar"} />
       </NextButton>
     </div>
@@ -114,7 +142,7 @@ const ParadaNavigation = () => {
 // Componente que usa o hook dentro do provider
 const Parada1Content = () => {
   const { activeContentId } = useNavigation();
-  
+
   return (
     <ParadaContainer className="container">
       <PitstopTitle
@@ -123,9 +151,7 @@ const Parada1Content = () => {
         iconAlt="placa parar"
       />
       {/* ModularIntro só aparece no primeiro bloco */}
-      {activeContentId === 1 && (
-        <ModularIntro sections={PARADA1_INTRO_DATA} />
-      )}
+      {activeContentId === 1 && <ModularIntro sections={PARADA1_INTRO_DATA} />}
       <Roadmap />
       {/* Renderiza apenas o content ativo */}
       <ParadaContent />
@@ -139,7 +165,7 @@ const Parada1Content = () => {
   );
 };
 
-const Parada1 = () => {
+const Parada1Base = () => {
   return (
     <ProgressionProvider>
       <NavigationProvider>
@@ -148,5 +174,27 @@ const Parada1 = () => {
     </ProgressionProvider>
   );
 };
+
+// Aplicar loading screen com pré-carregamento de imagens
+const Parada1 = withPageLoader(Parada1Base, {
+  imageSources: [
+    placa,
+    avancar,
+    back,
+    tarjaListra,
+    mapaMoto,
+    imgParada12,
+    imgParada13,
+    imgParada14,
+    imgParada15,
+    imgParada16,
+    imgParada171,
+    imgParada172,
+    imgParada173,
+    imgParada174,
+  ],
+  minLoadingTime: 500,
+  loadingText: "Preparando conteúdo...",
+});
 
 export default Parada1;

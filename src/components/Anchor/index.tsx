@@ -74,6 +74,8 @@ const Anchor: React.FC<AnchorProps> = ({
       );
       setActiveContent(contentId);
       updateProgression(contentId); // Atualiza a progressão quando clica
+      // Scroll para o topo ao navegar
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
   return (

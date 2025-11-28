@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { withPageLoader } from "../../hoc/withPageLoader";
 import tarjaCabeçalho from "../../assets/tarja-cabeçalho.png";
 import logoVibra from "../../assets/logo-vibra.png";
 import marcaFundo from "../../assets/marca-dobra.png";
@@ -17,7 +18,7 @@ import {
   NextButton,
 } from "./styles";
 
-const Modulo1 = () => {
+const Modulo1Base = () => {
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -64,5 +65,18 @@ const Modulo1 = () => {
     </ModuleMain>
   );
 };
+
+const Modulo1 = withPageLoader(Modulo1Base, {
+  imageSources: [
+    tarjaCabeçalho,
+    logoVibra,
+    marcaFundo,
+    motoDobra,
+    semaforo,
+    avancar,
+  ],
+  minLoadingTime: 500,
+  loadingText: "Carregando módulo...",
+});
 
 export default Modulo1;

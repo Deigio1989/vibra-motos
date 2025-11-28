@@ -290,13 +290,15 @@ export const ParadaContainer = styled.div`
   }
 
   .navigation {
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .next-button,
     .back-button {
-      margin-top: 4rem;
       width: 11rem;
+      object-fit: contain;
       cursor: pointer;
     }
   }

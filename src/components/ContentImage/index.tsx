@@ -12,12 +12,20 @@ interface ContentImageProps {
   borderRadius?: string;
 }
 
-const StyledImage = styled.img<ContentImageProps>`
-  width: ${(props) => props.width || "55%"};
-  height: ${(props) => props.height || "auto"};
-  object-fit: ${(props) => props.objectFit || "contain"};
-  margin: ${(props) => props.margin || "0"};
-  border-radius: ${(props) => props.borderRadius || "0"};
+interface StyledImageProps {
+  $width?: string;
+  $height?: string;
+  $objectFit?: "contain" | "cover" | "fill" | "scale-down" | "none";
+  $margin?: string;
+  $borderRadius?: string;
+}
+
+const StyledImage = styled.img<StyledImageProps>`
+  width: ${(props) => props.$width || "55%"};
+  height: ${(props) => props.$height || "auto"};
+  object-fit: ${(props) => props.$objectFit || "contain"};
+  margin: ${(props) => props.$margin || "0"};
+  border-radius: ${(props) => props.$borderRadius || "0"};
   max-width: 100%;
   display: block;
 `;
@@ -31,19 +39,17 @@ const ContentImage: React.FC<ContentImageProps> = ({
   className,
   margin,
   borderRadius,
-  ...props
 }) => {
   return (
     <StyledImage
       src={src}
       alt={alt}
-      width={width}
-      height={height}
-      objectFit={objectFit}
+      $width={width}
+      $height={height}
+      $objectFit={objectFit}
       className={className}
-      margin={margin}
-      borderRadius={borderRadius}
-      {...props}
+      $margin={margin}
+      $borderRadius={borderRadius}
     />
   );
 };

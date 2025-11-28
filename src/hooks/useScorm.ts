@@ -23,6 +23,17 @@ const scormAPI = {
     // window.API?.LMSSetValue('cmi.core.score.raw', score.toString());
   },
 
+  setSuspendData: (data: string) => {
+    console.log("SCORM: Suspend Data -", data);
+    // window.API?.LMSSetValue('cmi.suspend_data', data);
+  },
+
+  getSuspendData: (): string | null => {
+    console.log("SCORM: Getting Suspend Data");
+    // return window.API?.LMSGetValue('cmi.suspend_data') || null;
+    return null;
+  },
+
   commit: () => {
     console.log("SCORM: Data committed");
     // window.API?.LMSCommit('');
@@ -63,8 +74,19 @@ export const useScorm = () => {
     reportProgress(data);
   };
 
+  const setSuspendData = (data: string) => {
+    scormAPI.setSuspendData(data);
+    scormAPI.commit();
+  };
+
+  const getSuspendData = (): string | null => {
+    return scormAPI.getSuspendData();
+  };
+
   return {
     reportProgress,
     completeLesson,
+    setSuspendData,
+    getSuspendData,
   };
 };

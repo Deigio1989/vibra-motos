@@ -28,6 +28,7 @@
       <file href="index.html"/>
             <file href="assets/avancar.png"/>
       <file href="assets/back.png"/>
+      <file href="assets/destino-final.png"/>
       <file href="assets/icon-1-1.png"/>
       <file href="assets/icon-1-2.png"/>
       <file href="assets/icon-1-3.png"/>
@@ -41,6 +42,15 @@
       <file href="assets/icon-2-4.png"/>
       <file href="assets/icon-2-5.png"/>
       <file href="assets/icon-2-6.png"/>
+      <file href="assets/icon-3-1.png"/>
+      <file href="assets/icon-3-2.png"/>
+      <file href="assets/icon-3-3.png"/>
+      <file href="assets/icon-3-4.png"/>
+      <file href="assets/icon-3-5.png"/>
+      <file href="assets/icon-3-6.png"/>
+      <file href="assets/icon-3-7.png"/>
+      <file href="assets/icon-3-8.png"/>
+      <file href="assets/icone-final.png"/>
       <file href="assets/img-parada-1-2.png"/>
       <file href="assets/img-parada-1-3.png"/>
       <file href="assets/img-parada-1-4.png"/>
@@ -63,14 +73,18 @@
       <file href="assets/img-parada-3-5.png"/>
       <file href="assets/img-parada-3-6.png"/>
       <file href="assets/img-parada-3-7.png"/>
+      <file href="assets/img-parada-3-8.png"/>
       <file href="assets/logo-vibra.png"/>
       <file href="assets/main.css"/>
       <file href="assets/main.js"/>
       <file href="assets/mapa-moto.png"/>
-      <file href="assets/marca-fundo.png"/>
+      <file href="assets/marca-dobra.png"/>
       <file href="assets/moto-dobra.png"/>
       <file href="assets/placa.png"/>
       <file href="assets/quiz-background.png"/>
+      <file href="assets/quiz-title.png"/>
+      <file href="assets/retrovisor-back-2.png"/>
+      <file href="assets/retrovisor-back-3.png"/>
       <file href="assets/retrovisor-back.png"/>
       <file href="assets/retrovisor-body.png"/>
       <file href="assets/retrovisor-title.png"/>
@@ -80,8 +94,12 @@
       <file href="assets/roadmap3.png"/>
       <file href="assets/semaforo.png"/>
       <file href="assets/seta.png"/>
+      <file href="assets/sinal-amarelo.png"/>
+      <file href="assets/sinal-verde.png"/>
+      <file href="assets/sinal-vermelho.png"/>
       <file href="assets/tarja-cabeçalho.png"/>
       <file href="assets/tarja-listra.jpg"/>
+      <file href="assets/tarja-listra.png"/>
       <file href="assets/tarja-paradas.png"/>
     </resource>
   </resources>

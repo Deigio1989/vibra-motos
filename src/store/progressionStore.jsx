@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 // Contexto para gerenciar a progressão dos anchors
 const ProgressionContext = createContext();
@@ -11,25 +11,26 @@ export const ProgressionProvider = ({ children }) => {
   // Função para verificar o estado de um anchor
   const getAnchorState = (anchorId, currentActiveId) => {
     if (anchorId < currentActiveId) {
-      return 'previous'; // Anchors anteriores (cinza acinzentado)
+      return "previous"; // Anchors anteriores (cinza acinzentado)
     }
     if (anchorId === currentActiveId) {
-      return 'active'; // Anchor atual (verde normal)
+      return "active"; // Anchor atual (verde normal)
     }
-    if (anchorId <= maxReached + 1) {
-      return 'available'; // Próximo disponível (verde normal, clicável)
+    if (anchorId <= maxReached) {
+      return "available"; // Disponível (já foi visitado pelo botão avançar)
     }
-    return 'blocked'; // Anchors bloqueados (cinza bem escuro, não clicável)
+    return "blocked"; // Anchors bloqueados (cinza bem escuro, não clicável)
   };
 
   // Função para verificar se um anchor é clicável
+  // Só permite clicar em anchors já visitados (não no próximo)
   const isAnchorClickable = (anchorId) => {
-    return anchorId <= maxReached + 1;
+    return anchorId <= maxReached;
   };
 
-  // Função para avançar a progressão quando um anchor é acessado
+  // Função para avançar a progressão quando um anchor é acessado via botão avançar
   const updateProgression = (anchorId) => {
-    if (anchorId > maxReached && anchorId <= maxReached + 1) {
+    if (anchorId > maxReached) {
       setMaxReached(anchorId);
       console.log(`Progressão atualizada: maxReached = ${anchorId}`);
     }
@@ -45,7 +46,7 @@ export const ProgressionProvider = ({ children }) => {
     getAnchorState,
     isAnchorClickable,
     updateProgression,
-    resetProgression
+    resetProgression,
   };
 
   return (
@@ -59,7 +60,9 @@ export const ProgressionProvider = ({ children }) => {
 export const useProgression = () => {
   const context = useContext(ProgressionContext);
   if (!context) {
-    throw new Error('useProgression deve ser usado dentro de um ProgressionProvider');
+    throw new Error(
+      "useProgression deve ser usado dentro de um ProgressionProvider"
+    );
   }
   return context;
 };

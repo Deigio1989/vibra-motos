@@ -17,12 +17,23 @@ import tarjaListra from "../../assets/tarja-listra.jpg";
 import Roadmap from "../../components/Roadmap2";
 import ModularIntro from "../../components/ModularIntro";
 import { PARADA2_INTRO_DATA } from "../../data/parada2IntroData";
+import { withPageLoader } from "../../hoc/withPageLoader";
 import { NavigationProvider, useNavigation } from "../../store/navigationStore";
 import {
   ProgressionProvider,
   useProgression,
 } from "../../store/progressionStore";
 import ContentAnimation from "../../components/ContentAnimation";
+
+// Importar imagens para pré-carregamento
+import imgParada21 from "../../assets/img-parada-2-1.png";
+import imgParada221 from "../../assets/img-parada-2-2-1.png";
+import imgParada222 from "../../assets/img-parada-2-2-2.png";
+import imgParada223 from "../../assets/img-parada-2-2-3.png";
+import imgParada23 from "../../assets/img-parada-2-3.png";
+import imgParada14 from "../../assets/img-parada-1-4.png";
+import imgParada25 from "../../assets/img-parada-2-5.png";
+import imgParada26 from "../../assets/img-parada-2-6.png";
 
 // Componente interno que usa o navigation
 const ParadaContent = () => {
@@ -112,7 +123,7 @@ const ParadaNavigation = () => {
 // Componente que usa o hook dentro do provider
 const Parada2Content = () => {
   const { activeContentId } = useNavigation();
-  
+
   return (
     <ParadaContainer className="container">
       <PitstopTitle
@@ -121,9 +132,7 @@ const Parada2Content = () => {
         iconAlt="placa parar"
       />
       {/* ModularIntro só aparece no primeiro bloco */}
-      {activeContentId === 1 && (
-        <ModularIntro sections={PARADA2_INTRO_DATA} />
-      )}
+      {activeContentId === 1 && <ModularIntro sections={PARADA2_INTRO_DATA} />}
       <Roadmap />
       {/* Renderiza apenas o content ativo */}
       <ParadaContent />
@@ -137,7 +146,7 @@ const Parada2Content = () => {
   );
 };
 
-const Parada2 = () => {
+const Parada2Base = () => {
   return (
     <ProgressionProvider>
       <NavigationProvider>
@@ -146,5 +155,25 @@ const Parada2 = () => {
     </ProgressionProvider>
   );
 };
+
+// Aplicar loading screen com pré-carregamento de imagens
+const Parada2 = withPageLoader(Parada2Base, {
+  imageSources: [
+    placa,
+    avancar,
+    back,
+    tarjaListra,
+    imgParada21,
+    imgParada221,
+    imgParada222,
+    imgParada223,
+    imgParada23,
+    imgParada14,
+    imgParada25,
+    imgParada26,
+  ],
+  minLoadingTime: 500,
+  loadingText: "Preparando conteúdo...",
+});
 
 export default Parada2;

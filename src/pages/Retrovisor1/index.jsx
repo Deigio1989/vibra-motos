@@ -1,7 +1,9 @@
 import React from "react";
 import Retrovisor from "../../components/Retrovisor";
+import { withPageLoader } from "../../hoc/withPageLoader";
+import retrovisorBack1 from "../../assets/retrovisor-back.png";
 
-const Retrovisor1 = () => {
+const Retrovisor1Base = () => {
   const paragraphs = [
     "O Brasil é, sem dúvida, um país de motociclistas. A moto simboliza liberdade, praticidade e paixão, mas também carrega riscos elevados. Entender o contexto, respeitar as regras e pilotar de forma consciente é o que transforma essa liberdade em algo sustentável.",
     <>
@@ -22,5 +24,11 @@ const Retrovisor1 = () => {
     />
   );
 };
+
+const Retrovisor1 = withPageLoader(Retrovisor1Base, {
+  imageSources: [retrovisorBack1],
+  minLoadingTime: 400,
+  loadingText: "Carregando...",
+});
 
 export default Retrovisor1;

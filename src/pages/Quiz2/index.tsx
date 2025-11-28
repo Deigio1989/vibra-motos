@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { QuizContainer, QuizBackground } from "../Quiz1/styles";
+import { withPageLoader } from "../../hoc/withPageLoader";
 import quizBackground from "../../assets/quiz-background.png";
 import seta from "../../assets/seta.png";
 import { QUIZ2_DATA } from "../../data/quiz2Data";
@@ -11,7 +12,7 @@ import avancar from "../../assets/avancar.png";
 import { useQuizScores } from "../../store/quizScoresStore";
 import { shuffleQuestionOptions } from "../../utils/shuffleUtils";
 
-const Quiz2: React.FC = () => {
+const Quiz2Base: React.FC = () => {
   // Embaralha as questões uma única vez na inicialização
   const [shuffledQuestions] = useState(() =>
     QUIZ2_DATA.questions.map((question) => shuffleQuestionOptions(question))
@@ -207,5 +208,11 @@ const Quiz2: React.FC = () => {
     </div>
   );
 };
+
+const Quiz2 = withPageLoader(Quiz2Base, {
+  imageSources: [quizBackground, seta, avancar],
+  minLoadingTime: 400,
+  loadingText: "Preparando quiz...",
+});
 
 export default Quiz2;

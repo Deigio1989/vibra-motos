@@ -6,7 +6,7 @@ import {
   Paragraphs,
   ContentImage,
 } from "./styles";
-import paradaImage from "../../assets/img-parada-3-6.png";
+import paradaImage from "../../assets/img-parada-3-8.png";
 import {
   TitledParagraph,
   TitledList,

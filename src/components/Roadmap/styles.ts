@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const fadeInDelay = keyframes`
+export const fadeInDelay = keyframes`
   0% {
     opacity: 0;
   }
