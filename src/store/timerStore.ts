@@ -5,14 +5,15 @@ import { DEFAULT_TIMER_DURATION } from "../constants/timer";
 interface TimerState {
   // Timer do content atual
   currentContentTimer: number;
+  currentTimerDuration: number; // Duração do timer atual
   canAdvanceCurrentContent: boolean;
 
   // Contents completados (sincronizado com SCORM + localStorage como fallback)
   completedContents: Set<string>;
 
   // Actions
-  startTimer: (contentId: string) => void;
-  updateTimer: (seconds: number) => void;
+  startTimer: (contentId: string, duration?: number) => void;
+  updateTimer: (seconds: number, duration: number) => void;
   resetTimer: () => void;
   markContentAsCompleted: (contentId: string) => void;
   isContentCompleted: (contentId: string) => boolean;
@@ -24,31 +25,35 @@ export const useTimerStore = create<TimerState>()(
   persist(
     (set, get) => ({
       currentContentTimer: 0,
+      currentTimerDuration: DEFAULT_TIMER_DURATION,
       canAdvanceCurrentContent: false,
       completedContents: new Set<string>(),
 
-      startTimer: (contentId: string) => {
+      startTimer: (contentId: string, duration = DEFAULT_TIMER_DURATION) => {
         const isCompleted = get().completedContents.has(contentId);
 
         if (isCompleted) {
           // Se já foi completado, libera imediatamente
           set({
-            currentContentTimer: DEFAULT_TIMER_DURATION,
+            currentContentTimer: duration,
+            currentTimerDuration: duration,
             canAdvanceCurrentContent: true,
           });
         } else {
           // Inicia do zero
           set({
             currentContentTimer: 0,
+            currentTimerDuration: duration,
             canAdvanceCurrentContent: false,
           });
         }
       },
 
-      updateTimer: (seconds: number) => {
+      updateTimer: (seconds: number, duration: number) => {
         set({
           currentContentTimer: seconds,
-          canAdvanceCurrentContent: seconds >= DEFAULT_TIMER_DURATION,
+          currentTimerDuration: duration,
+          canAdvanceCurrentContent: seconds >= duration,
         });
       },
 

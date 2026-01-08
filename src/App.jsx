@@ -11,9 +11,8 @@ import Parada1 from "./pages/Parada1";
 import Parada2 from "./pages/Parada2";
 import Parada3 from "./pages/Parada3";
 
-import Quiz1 from "./pages/Quiz1";
-import Quiz2 from "./pages/Quiz2";
-import Quiz3 from "./pages/Quiz3";
+import Quiz from "./pages/Quiz";
+import Atividade1 from "./pages/Atividade1";
 
 import DestinoFinal from "./pages/DestinoFinal";
 import TEST from "./pages/TEST";
@@ -27,13 +26,12 @@ function App() {
         <Route path="/" element={<Modulo1 />} />
         <Route path="/parada1" element={<Parada1 />} />
         <Route path="/retrovisor1" element={<Retrovisor1 />} />
-        <Route path="/quiz1" element={<Quiz1 />} />
         <Route path="/parada2" element={<Parada2 />} />
-        <Route path="/quiz2" element={<Quiz2 />} />
         <Route path="/retrovisor2" element={<Retrovisor2 />} />
         <Route path="/parada3" element={<Parada3 />} />
         <Route path="/retrovisor3" element={<Retrovisor3 />} />
-        <Route path="/quiz3" element={<Quiz3 />} />
+        <Route path="/atividade1" element={<Atividade1 />} />
+        <Route path="/quiz" element={<Quiz />} />
         <Route path="/destinofinal" element={<DestinoFinal />} />
         <Route path="/test" element={<TEST />} />
       </Routes>

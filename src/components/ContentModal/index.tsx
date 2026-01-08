@@ -3,6 +3,7 @@ import * as S from "./styles";
 import Timer from "../Timer";
 import { NextButton } from "../../styles/ButtonStyles";
 import avancar from "../../assets/avancar.png";
+import { DEFAULT_TIMER_DURATION } from "../../constants/timer";
 
 interface ContentModalProps {
   isOpen: boolean;
@@ -17,7 +18,7 @@ const ContentModal: React.FC<ContentModalProps> = ({
   isOpen,
   onClose,
   contentId,
-  timerDuration = 60,
+  timerDuration = DEFAULT_TIMER_DURATION,
   canAdvance,
   children,
 }) => {
@@ -41,14 +42,19 @@ const ContentModal: React.FC<ContentModalProps> = ({
         <S.ModalContent>
           <div className="children">{children}</div>
           <S.ModalFooter>
+            <div style={{ flex: 1 }}></div>
             <Timer contentId={contentId} duration={timerDuration} />
-            <NextButton
-              onClick={onClose}
-              disabled={!canAdvance}
-              $canAdvance={canAdvance}
+            <div
+              style={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
             >
-              <img src={avancar} alt="Avançar" />
-            </NextButton>
+              <NextButton
+                onClick={onClose}
+                disabled={!canAdvance}
+                $canAdvance={canAdvance}
+              >
+                <img src={avancar} alt="Avançar" />
+              </NextButton>
+            </div>
           </S.ModalFooter>
         </S.ModalContent>
       </S.ModalCard>

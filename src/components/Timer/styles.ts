@@ -6,7 +6,7 @@ export const TimerContainer = styled.div`
   justify-content: space-between;
   background-color: var(--text-background-color);
   border-radius: 40px;
-  min-width: 450px;
+  width: fit-content;
   p {
     color: var(--paragraph-color);
     line-height: 1;

@@ -1,25 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { QuizContainer, QuizBackground } from "../Quiz1/styles";
+import { QuizContainer, QuizBackground } from "./styles";
 import { withPageLoader } from "../../hoc/withPageLoader";
 import quizBackground from "../../assets/quiz-background.png";
 import seta from "../../assets/seta.png";
-import { QUIZ3_DATA } from "../../data/quiz3Data";
+import { QUIZ_DATA } from "../../data/quizData";
 import { useScorm } from "../../hooks/useScorm";
-import QuizFeedback from "../../components/QuizFeedback";
 import CourseFeedback from "../../components/CourseFeedback";
 import { NextButton } from "../../styles/ButtonStyles";
 import avancar from "../../assets/avancar.png";
 import reiniciar from "../../assets/reiniciar.png";
-import { useQuizScores } from "../../store/quizScoresStore";
 import { shuffleQuestionOptions } from "../../utils/shuffleUtils";
 import acerto from "../../assets/acerto.png";
 import erro from "../../assets/erro.png";
 
-const Quiz3Base: React.FC = () => {
+const QuizBase: React.FC = () => {
   // Embaralha as questões uma única vez na inicialização
   const [shuffledQuestions] = useState(() =>
-    QUIZ3_DATA.questions.map((question) => shuffleQuestionOptions(question))
+    QUIZ_DATA.questions.map((question) => shuffleQuestionOptions(question))
   );
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -27,7 +25,6 @@ const Quiz3Base: React.FC = () => {
     Record<number, string>
   >({});
   const [isCompleted, setIsCompleted] = useState(false);
-  const [showCourseFeedback, setShowCourseFeedback] = useState(false);
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(
     new Set()
   );
@@ -37,9 +34,6 @@ const Quiz3Base: React.FC = () => {
   // Hook SCORM para comunicação com LMS
   const scormHook = useScorm();
   const { completeLesson, setSuspendData } = scormHook;
-
-  // Store para armazenar scores dos quizzes
-  const { setQuiz3Score, getTotalScore } = useQuizScores();
 
   // Função para calcular pontuação
   const calculateScore = () => {
@@ -53,26 +47,18 @@ const Quiz3Base: React.FC = () => {
     return { correct, total: shuffledQuestions.length, percentage };
   };
 
-  // Função para continuar para o feedback do curso
-  const handleContinueToCourseFeedback = () => {
-    // Salva o score do Quiz3
-    const scoreData = calculateScore();
-    setQuiz3Score(scoreData);
-    setShowCourseFeedback(true);
-  };
-
   // Função para finalizar o curso
   const handleCourseComplete = () => {
-    // Calcular score total e determinar se passou
-    const totalScore = getTotalScore();
-    const passed = totalScore.correct >= 8; // Desempenho alto = passou
+    // Calcular score total
+    const totalScore = calculateScore();
+    const passed = totalScore.correct >= 8; // Mínimo 8 de 10 para passar
 
     // Marcar curso como completo no SCORM
     if (completeLesson && typeof completeLesson === "function") {
       completeLesson(totalScore.percentage, passed);
     }
 
-    // Navegar para página final ou início
+    // Navegar para página final
     navigate("/destinofinal");
   };
 
@@ -97,9 +83,9 @@ const Quiz3Base: React.FC = () => {
     window.location.reload();
   };
 
-  // Se deve mostrar o feedback do curso
-  if (showCourseFeedback) {
-    const totalScore = getTotalScore();
+  // Se o quiz foi concluído, mostrar feedback do curso
+  if (isCompleted) {
+    const totalScore = calculateScore();
 
     return (
       <div>
@@ -113,28 +99,6 @@ const Quiz3Base: React.FC = () => {
           restartButton={
             <NextButton onClick={handleRestart}>
               <img src={reiniciar} alt="Reiniciar Curso" />
-            </NextButton>
-          }
-        />
-      </div>
-    );
-  }
-
-  // Se o quiz foi concluído, mostrar tela de resultado do Quiz3
-  if (isCompleted) {
-    const scoreData = calculateScore();
-
-    return (
-      <div>
-        <QuizFeedback
-          score={{
-            correct: scoreData.correct,
-            total: scoreData.total,
-            percentage: scoreData.percentage,
-          }}
-          nextButton={
-            <NextButton onClick={handleContinueToCourseFeedback}>
-              <img src={avancar} alt="Ver Resultado Final" />
             </NextButton>
           }
         />
@@ -171,7 +135,7 @@ const Quiz3Base: React.FC = () => {
         const scoreData = calculateScore();
 
         if (completeLesson && typeof completeLesson === "function") {
-          completeLesson(scoreData.percentage, scoreData.percentage >= 70);
+          completeLesson(scoreData.percentage, scoreData.percentage >= 80);
         }
       } else {
         // Próxima pergunta
@@ -196,7 +160,7 @@ const Quiz3Base: React.FC = () => {
           </div>
 
           <div className="text-container">
-            <h3 className="title">{QUIZ3_DATA.title}</h3>
+            <h3 className="title">{QUIZ_DATA.title}</h3>
             <span className="question-title">
               Pergunta {currentQuestion.id}
             </span>
@@ -264,10 +228,10 @@ const Quiz3Base: React.FC = () => {
   );
 };
 
-const Quiz3 = withPageLoader(Quiz3Base, {
+const Quiz = withPageLoader(QuizBase, {
   imageSources: [quizBackground, seta, avancar, reiniciar, acerto, erro],
   minLoadingTime: 400,
   loadingText: "Preparando quiz...",
 });
 
-export default Quiz3;
+export default Quiz;

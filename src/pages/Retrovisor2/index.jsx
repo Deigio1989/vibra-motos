@@ -17,8 +17,8 @@ const Retrovisor2Base = () => {
     <Retrovisor
       imgSrc={retrovisorBack2}
       paragraphs={paragraphs}
-      nextRoute="/quiz2"
-      nextButtonAlt="Ir para Quiz 2"
+      nextRoute="/parada3"
+      nextButtonAlt="Ir para Parada 3"
     />
   );
 };

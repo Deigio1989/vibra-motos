@@ -31,6 +31,7 @@ export const Text = styled(FramedTextTarja1)`
 `;
 
 export const Title = styled(BaseTitle)`
+  margin-bottom: 0;
   .title-text span {
     font-size: 64px;
   }

@@ -4,7 +4,7 @@ import { ParadaContainer } from "../../styles/ParadaContentStyles";
 import { NextButton } from "../../styles/ButtonStyles";
 import PitstopTitle from "../../components/PitstopTitle";
 import ParadaContent2_1 from "../../components/ParadaContent2-1";
-import ParadaContent2_2 from "../../components/ParadaContent2-2";
+import ParadaContent2_5from "../../components/ParadaContent2-2";
 import ParadaContent2_3 from "../../components/ParadaContent2-3";
 import ParadaContent2_4 from "../../components/ParadaContent2-4";
 import ParadaContent2_5 from "../../components/ParadaContent2-5";
@@ -19,13 +19,13 @@ import { NavigationProvider } from "../../store/navigationStore";
 import ContentAnimation from "../../components/ContentAnimation";
 
 import Timer from "../../components/Timer";
+import ParadaContent1_5 from "../../components/ParadaContent1-5";
+import Atividade1 from "../Atividade1";
 
 // Aplicar loading screen com pré-carregamento de imagens
 const Test = () => {
   return (
-    <div className="test-container" style={{ width: "80%" }}>
-      <ParadaContent2_6 />
-    </div>
+    <Atividade1></Atividade1>
   );
 };
 

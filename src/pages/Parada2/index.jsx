@@ -35,13 +35,17 @@ import imgParada14 from "../../assets/img-parada-1-4.png";
 import imgParada25 from "../../assets/img-parada-2-5.png";
 import imgParada26 from "../../assets/img-parada-2-6.png";
 
+const TOTAL_CONTENTS = 6;
+
 const Parada2Content = () => {
   const navigate = useNavigate();
-  const { activeContent, setActiveContent } = useNavigation();
+  const { activeContentId, setActiveContent } = useNavigation();
   const { updateProgression } = useProgression();
   const [showIntro, setShowIntro] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [visitedContents, setVisitedContents] = useState(new Set());
+
+  const { canAdvance } = useContentTimer(`parada2-content${activeContentId}`);
 
   const handleIntroAdvance = () => {
     setShowIntro(false);
@@ -53,24 +57,33 @@ const Parada2Content = () => {
   };
 
   const handleModalClose = () => {
-    setIsModalOpen(false);
-    setVisitedContents((prev) => new Set([...prev, activeContent]));
-    updateProgression("parada2");
+    // Marca conteúdo como visitado
+    setVisitedContents((prev) => new Set([...prev, activeContentId]));
 
-    const nextContent = activeContent + 1;
-    if (nextContent <= 6) {
-      setActiveContent(nextContent);
+    // Fecha a modal
+    setIsModalOpen(false);
+
+    // Se não é o último, apenas abre o próximo anchor (mas não a modal)
+    if (activeContentId < TOTAL_CONTENTS) {
+      const nextContentId = activeContentId + 1;
+      setActiveContent(nextContentId);
+      updateProgression(nextContentId);
+    } else {
+      // Último conteúdo visitado
+      updateProgression(activeContentId);
     }
   };
 
   const handleFinalAdvance = () => {
-    navigate("/retrovisor2");
+    if (visitedContents.size === TOTAL_CONTENTS) {
+      navigate("/retrovisor2");
+    }
   };
 
-  const allContentsVisited = visitedContents.size === 6;
+  const allContentsVisited = visitedContents.size === TOTAL_CONTENTS;
 
   const renderModalContent = () => {
-    switch (activeContent) {
+    switch (activeContentId) {
       case 1:
         return <ParadaContent2_1 />;
       case 2:
@@ -125,7 +138,8 @@ const Parada2Content = () => {
       <ContentModal
         isOpen={isModalOpen}
         onClose={handleModalClose}
-        contentId={`parada2-content${activeContent}`}
+        contentId={`parada2-content${activeContentId}`}
+        canAdvance={canAdvance}
       >
         {renderModalContent()}
       </ContentModal>

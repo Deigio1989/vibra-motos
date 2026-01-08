@@ -32,8 +32,8 @@ export const useContentTimer = (
       clearInterval(intervalRef.current);
     }
 
-    // Inicia o timer (já verifica se está completado internamente)
-    startTimer(contentId);
+    // Inicia o timer com a duração específica
+    startTimer(contentId, timerDuration);
 
     // Se já estava completado, não precisa contar
     if (isContentCompleted(contentId)) {
@@ -44,7 +44,7 @@ export const useContentTimer = (
     let seconds = 0;
     intervalRef.current = setInterval(() => {
       seconds++;
-      updateTimer(seconds);
+      updateTimer(seconds, timerDuration);
 
       // Ao completar o tempo, marca como completado
       if (seconds >= timerDuration) {

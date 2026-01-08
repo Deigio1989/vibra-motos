@@ -13,8 +13,8 @@ const Retrovisor3 = () => {
     <Retrovisor
       imgSrc={retrovisorBack3}
       paragraphs={paragraphs}
-      nextRoute="/quiz3"
-      nextButtonAlt="Ir para Quiz 3"
+      nextRoute="/quiz"
+      nextButtonAlt="Ir para Quiz Final"
     />
   );
 };

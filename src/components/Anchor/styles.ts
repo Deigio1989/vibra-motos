@@ -145,6 +145,30 @@ export const AnchorWrapper = styled.div<AnchorWrapperProps>`
     align-items: center;
     justify-content: center;
 
+    @keyframes pulsePrimary {
+      0% {
+        transform: translateX(-50%) translateY(calc(-50% + 6.5rem)) scale(1);
+      }
+      50% {
+        transform: translateX(-50%) translateY(calc(-50% + 6.5rem)) scale(1.1);
+      }
+      100% {
+        transform: translateX(-50%) translateY(calc(-50% + 6.5rem)) scale(1);
+      }
+    }
+
+    @keyframes pulseSecondary {
+      0% {
+        transform: translateX(-50%) translateY(calc(-50% - 6.5rem)) scale(1);
+      }
+      50% {
+        transform: translateX(-50%) translateY(calc(-50% - 6.5rem)) scale(1.1);
+      }
+      100% {
+        transform: translateX(-50%) translateY(calc(-50% - 6.5rem)) scale(1);
+      }
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -166,6 +190,14 @@ export const AnchorWrapper = styled.div<AnchorWrapperProps>`
       width: 7rem;
       height: 7rem;
       padding: 1rem;
+
+      /* Aplicar animação pulse apenas quando está aberto E não está bloqueado/acinzentado */
+      animation: ${(props) => {
+        if (props.$isBlocked || props.$isPrevious) return "none";
+        return props.$variant === "primary"
+          ? "pulsePrimary 2s ease-in-out infinite"
+          : "pulseSecondary 2s ease-in-out infinite";
+      }};
 
       img {
         /* A imagem mantém as mesmas proporções quando expandida */
