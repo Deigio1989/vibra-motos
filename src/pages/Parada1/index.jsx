@@ -134,7 +134,7 @@ const Parada1Content = () => {
         <>
           <Roadmap onAnchorClick={handleAnchorClick} />
 
-          <div className="navigation">
+          {/*     <div className="navigation">
             <NextButton
               onClick={handleFinalAdvance}
               disabled={!allContentsVisited}
@@ -142,7 +142,7 @@ const Parada1Content = () => {
             >
               <img src={avancar} alt="Ir para Retrovisor" />
             </NextButton>
-          </div>
+          </div> */}
         </>
       )}
 

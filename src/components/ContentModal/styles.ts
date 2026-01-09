@@ -40,7 +40,7 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalCard = styled.div<{ $isOpen: boolean }>`
-  background-color: var(--secondary-background);
+  background-color: #004d21;
   border-radius: 20px;
   max-width: 1200px;
   width: 90%;

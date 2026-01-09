@@ -127,14 +127,14 @@ const Parada3Content = () => {
       {!showIntro && (
         <>
           <Roadmap onAnchorClick={handleAnchorClick} />
-          {allContentsVisited && (
+          {/*  {allContentsVisited && (
             <NextButton
               onClick={handleFinalAdvance}
               style={{ marginTop: "40px", marginBottom: "40px" }}
             >
               <img src={avancar} alt="Avançar para Retrovisor 3" />
             </NextButton>
-          )}
+          )} */}
         </>
       )}
       <div className="tarja-listra">

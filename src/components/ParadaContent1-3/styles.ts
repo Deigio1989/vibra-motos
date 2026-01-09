@@ -18,7 +18,7 @@ export const ContentWrapper = styled(BaseContentWrapper)`
   }
 
   .content-image {
-    width: 55%;
+    width: 57%;
     object-fit: contain;
   }
 `;

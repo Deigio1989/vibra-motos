@@ -72,12 +72,26 @@ export const BackgroundImages = styled.div`
   height: 100%;
   width: 100%;
   top: 0;
+  background-color: #004d21;
   img {
     position: absolute;
   }
 
   .video-test {
     position: absolute;
+    top: 0;
+    right: 0;
+    height: 80%;
+    @keyframes slideLeft {
+      from {
+        transform: translateX(10%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    animation: ${fadeIn} 1.5s ease-in-out, slideLeft 1s ease-in-out;
     z-index: 5;
   }
 

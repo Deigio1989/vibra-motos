@@ -135,7 +135,7 @@ const QuizBase: React.FC = () => {
         const scoreData = calculateScore();
 
         if (completeLesson && typeof completeLesson === "function") {
-          completeLesson(scoreData.percentage, scoreData.percentage >= 80);
+          completeLesson(scoreData.percentage, scoreData.correct >= 6);
         }
       } else {
         // Próxima pergunta

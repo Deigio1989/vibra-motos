@@ -34,7 +34,7 @@ const determineType = (
 
   if (correct >= 8) {
     return "high-performance";
-  } else if (correct >= 5) {
+  } else if (correct >= 6) {
     return "medium-performance";
   } else {
     return "low-performance";

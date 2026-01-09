@@ -152,7 +152,7 @@ const ParadaContent1_5: React.FC<ParadaContent1_5Props> = ({
             )}
 
             <div className="content-center">
-              <div className="carousel-img">
+              <div className="sign">
                 <ContentImage
                   src={placaParar}
                   alt="Placa de Pare"

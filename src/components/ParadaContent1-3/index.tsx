@@ -7,6 +7,7 @@ import {
   ContentImage,
 } from "./styles";
 import paradaImage from "../../assets/img-parada-1-3.png";
+import paradaVideo from "../../assets/video-parada-1-3.webm";
 
 interface ParadaContent1_3Props {
   number?: string;
@@ -26,7 +27,7 @@ const ParadaContent1_3: React.FC<ParadaContent1_3Props> = ({
     "Fadiga e distração: cansaço prolongado e uso de celular são causas recorrentes de acidentes graves.",
     "Excesso de confiança: pilotos experientes às vezes subestimam riscos, acreditando dominar qualquer situação.",
   ],
-  imageSrc = paradaImage,
+  imageSrc = paradaVideo,
   imageAlt = "alt prosivório",
 }) => {
   return (
@@ -45,7 +46,7 @@ const ParadaContent1_3: React.FC<ParadaContent1_3Props> = ({
           </div>
         </Title>
 
-        <ContentImage className="content-image" src={imageSrc} alt={imageAlt} />
+        <video className="content-image" src={imageSrc} autoPlay loop muted />
       </div>
       <Text>
         <p className="chamada">

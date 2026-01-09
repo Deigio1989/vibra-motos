@@ -8,7 +8,7 @@ import motoDobra from "../../assets/moto-dobra.png";
 import semaforo from "../../assets/semaforo.png";
 import PitstopTitle from "../../components/PitstopTitle";
 import avancar from "../../assets/avancar.png";
-import videoTest from "../../assets/video-abertura.webm";
+import videoTest from "../../assets/moto-dobra.webm";
 import teaserVideo from "../../assets/video-teaser.mp4";
 
 import {
@@ -33,7 +33,7 @@ const Modulo1Base = () => {
       <IntroSection>
         <BackgroundImages>
           <img className="marca" src={marcaFundo} alt="" />
-          <img className="intro-image" src={motoDobra} alt="" />
+          {/*  <img className="intro-image" src={motoDobra} alt="" /> */}
           <video
             className="video-test"
             src={videoTest}

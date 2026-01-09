@@ -2,6 +2,7 @@ import React from "react";
 import { ContentWrapper, Text, Title, Paragraphs } from "./styles";
 import ContentImage from "../ContentImage";
 import paradaImage from "../../assets/img-parada-1-6.png";
+import paradaVideo from "../../assets/video-parada-1-6.webm";
 
 interface ParadaContent1_6Props {
   number?: string;
@@ -21,7 +22,7 @@ const ParadaContent1_6: React.FC<ParadaContent1_6Props> = ({
     "No risco: motoristas que mudam de faixa sem sinalizar, distrações com celular e pontos cegos tornam o corredor imprevisível.",
   ],
   conclusionParagraph = "Especialistas recomendam: se for usar, que seja em baixa velocidade e com atenção redobrada.",
-  imageSrc = paradaImage,
+  imageSrc = paradaVideo,
   imageAlt = "alt prosivório",
 }) => {
   return (
@@ -34,11 +35,13 @@ const ParadaContent1_6: React.FC<ParadaContent1_6Props> = ({
           </h2>
         </div>
       </Title>
-      <ContentImage
+      <video
         src={imageSrc}
-        alt={imageAlt}
         width="100%"
-        objectFit="contain"
+        style={{ objectFit: "contain" }}
+        autoPlay
+        loop
+        muted
       />
       <div className="flex">
         <Text>
