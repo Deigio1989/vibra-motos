@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ContentWrapper, Card, Title, Paragraphs } from "./styles";
 import ContentImage from "../ContentImage";
 import paradaImage1 from "../../assets/img-parada-2-3.png";
+import paradaVideo from "../../assets/video-parada-2-3.webm";
 import paradaImage2 from "../../assets/refactor-2-3-2.png";
 import paradaImage3 from "../../assets/refactor-2-3-3-.png";
 import seta from "../../assets/seta.png";
@@ -51,11 +52,13 @@ const ParadaContent2_3: React.FC<ParadaContent2_3Props> = ({
         <Card key={currentSlide}>
           <div className="carousel-flex slide-0">
             <div className="carousel-img">
-              <ContentImage
-                src={paradaImage1}
-                alt={imageAlt}
+              <video
+                src={paradaVideo}
                 width={"100%"}
-                objectFit="contain"
+                style={{ opacity: "0.9" }}
+                autoPlay
+                loop
+                muted
               />
             </div>
 

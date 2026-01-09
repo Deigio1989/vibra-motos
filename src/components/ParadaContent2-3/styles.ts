@@ -50,43 +50,54 @@ export const Card = styled(FramedTextTarja2)`
   .carousel-flex {
     display: flex;
     gap: 2rem;
-    align-items: center;
+    align-items: flex-end;
     .carousel-img {
       flex: 2;
-    }
-    .content-text {
-      flex: 5;
-    }
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
 
-    .arrow-button {
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      animation: pulse 2s ease-in-out infinite;
-
-      &:hover {
-        animation: none;
-        transform: scale(1.15);
-      }
-
-      &:active {
-        transform: scale(0.95);
-      }
-
-      &.arrow-left {
-        order: -1;
+      video {
+        width: 140%;
+        position: relative;
+        left: -3rem;
+        bottom: -2rem;
       }
     }
+  }
+  .content-text {
+    flex: 5;
+  }
 
-    @keyframes pulse {
-      0%,
-      100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
+  .arrow-button {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+
+    &:hover {
+      animation: none;
+      transform: scale(1.15);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &.arrow-left {
+      order: -1;
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
     }
   }
 `;

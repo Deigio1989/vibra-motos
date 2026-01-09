@@ -109,11 +109,7 @@ const ParadaContent3_2: React.FC<ParadaContent3_2Props> = ({
                   if (titleMatch) {
                     const [, title, content] = titleMatch;
                     return (
-                      <p
-                        key={idx}
-                        className="card-paragraph"
-                        style={{ marginBottom: idx === 0 ? "2rem" : "0" }}
-                      >
+                      <p key={idx} className="card-paragraph">
                         <span
                           className="paragraph-title"
                           style={{
@@ -130,11 +126,7 @@ const ParadaContent3_2: React.FC<ParadaContent3_2Props> = ({
                   }
 
                   return (
-                    <p
-                      key={idx}
-                      className="card-paragraph"
-                      style={{ marginBottom: idx === 0 ? "2rem" : "0" }}
-                    >
+                    <p key={idx} className="card-paragraph">
                       {paragraph}
                     </p>
                   );
